@@ -10,16 +10,22 @@ params
 
 methods
     upvote
-        ignore if upvoted
-        clear downvoted
-        set upvoted
-        ++count
+        if upvoted
+            clear upvoted
+            --count
+        else
+            clear downvoted
+            set upvoted
+            ++count
         send to server
     downvote
-        ignore if downvoted
-        clear upvoted
-        set downvoted
-        --count
+        if downvoted
+            clear downvoted
+            ++count
+        else
+            clear upvoted
+            set downvoted
+            --count
         send to server
     star
         toggle starred
