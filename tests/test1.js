@@ -1,5 +1,9 @@
-// setup mock objects and helpers
-//
+function gen(params) {
+    var html = $('#templates .upvote').clone();
+    $('#demo').append(html);
+    return html.upvote(params);
+}
+
 function setUp() {
     //$('#demo').append(table);
 }
@@ -15,6 +19,7 @@ test('sanity', function() {
 });
 
 test('upvote non-downvoted non-upvoted', function() {
+    var obj = gen();
 });
 
 test('upvote downvoted', function() {

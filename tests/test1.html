@@ -11,6 +11,7 @@
     <script src="test1.js"></script>
 
     <link rel="stylesheet" href="qunit-1.11.0.css">
+    <link rel="stylesheet" href="../css/jquery-upvote.css">
     <style type="text/css">
 	<!--
 	.clear {
@@ -33,7 +34,13 @@
     <div class="clear"></div>
     <ol id="qunit-tests"></ol>
     <div id="qunit-fixture"></div>
-    <div class="templates hidden">
+    <div id="templates" class="hidden">
+        <div class="upvote">
+            <a class="upvote off" title="[upvote]"></a>
+            <span class="count" title="[count]"></span>
+            <a class="downvote off" title="[downvote]"></a>
+            <a class="star off" title="[star]"></a>
+        </div>
     </div>
 </body>
 </html>
