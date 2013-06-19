@@ -15,7 +15,6 @@
 (function($) {
     "use strict";
     var defaults = {  
-        template_selector: '.templates .upvote',
         count: 0,
         upvoted: false,
         downvoted: false,
@@ -32,12 +31,26 @@
 
     function _init(options_) {
         obj = this;
-        options = $.extend(defaults, options_);
+        options = $.extend({}, defaults, options_);
 
         count = options.count;
         upvoted = options.upvoted;
         downvoted = options.downvoted;
         starred = options.starred;
+
+        obj.find('.count').text(count);
+        if (upvoted) {
+            obj.find('.upvote').removeClass('off');
+            obj.find('.upvote').addClass('on');
+        }
+        else if (downvoted) {
+            obj.find('.downvote').removeClass('off');
+            obj.find('.downvote').addClass('on');
+        }
+        if (starred) {
+            obj.find('.star').removeClass('off');
+            obj.find('.star').addClass('on');
+        }
 
         return this;
     }

@@ -19,6 +19,7 @@ div.upvote span.count {
     display: block;
     font-size: 24px;
     font-family: Arial, Liberation, Sans, DejaVu Sans, sans-serif;
+    color: #555;
 }
 
 div.upvote a.upvote.on {
