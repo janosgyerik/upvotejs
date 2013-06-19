@@ -85,7 +85,19 @@
     }
 
     function _downvote() {
-        // todo
+        if (downvoted) {
+            downvoted = false;
+            ++count;
+        }
+        else {
+            downvoted = true;
+            --count;
+            if (upvoted) {
+                upvoted = false;
+                --count;
+            }
+        }
+        __render();
         return this;
     }
 

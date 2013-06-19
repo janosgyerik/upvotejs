@@ -1,3 +1,5 @@
+implement star
+
 implement clicking
 
 css class "on" "off" not so good (too short)

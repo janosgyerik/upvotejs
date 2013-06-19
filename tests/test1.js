@@ -33,6 +33,31 @@ test('upvote downvoted', function() {
 });
 
 test('upvote upvoted', function() {
+    var obj = gen({count: 5, upvoted: true});
+    var count = obj.upvote('count');
+    obj.upvote('upvote');
+    equal(obj.upvote('count'), count - 1);
+});
+
+test('downvote non-downvoted non-upvoted', function() {
+    var obj = gen({count: 5});
+    var count = obj.upvote('count');
+    obj.upvote('downvote');
+    equal(obj.upvote('count'), count - 1);
+});
+
+test('downvote upvoted', function() {
+    var obj = gen({count: 5, upvoted: true});
+    var count = obj.upvote('count');
+    obj.upvote('downvote');
+    equal(obj.upvote('count'), count - 2);
+});
+
+test('downvote downvoted', function() {
+    var obj = gen({count: 5, downvoted: true});
+    var count = obj.upvote('count');
+    obj.upvote('downvote');
+    equal(obj.upvote('count'), count + 1);
 });
 
 test('star non-starred', function() {
