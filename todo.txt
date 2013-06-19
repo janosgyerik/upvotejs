@@ -1,0 +1,26 @@
+add perfect SE clone mock
+
+make the test replicate the mock using different params
+
+params
+    count
+    upvoted
+    downvoted
+    starred
+
+methods
+    upvote
+        ignore if upvoted
+        clear downvoted
+        set upvoted
+        ++count
+        send to server
+    downvote
+        ignore if downvoted
+        clear upvoted
+        set downvoted
+        --count
+        send to server
+    star
+        toggle starred
+    
