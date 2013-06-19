@@ -102,8 +102,13 @@
     }
 
     function _star() {
-        // todo
+        starred = ! starred;
+        __render();
         return this;
+    }
+
+    function _starred() {
+        return starred;
     }
 
     var methods = {
@@ -111,6 +116,7 @@
         count: _count,
         upvote: _upvote,
         downvote: _downvote,
+        starred: _starred,
         star: _star,
         destroy: _destroy
     };

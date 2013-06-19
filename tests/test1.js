@@ -61,7 +61,22 @@ test('downvote downvoted', function() {
 });
 
 test('star non-starred', function() {
+    var obj = gen();
+    obj.upvote('star');
+    equal(obj.upvote('starred'), true);
 });
 
 test('star starred', function() {
+    var obj = gen({starred: true});
+    obj.upvote('star');
+    equal(obj.upvote('starred'), false);
+});
+
+test('click upvote', function() {
+});
+
+test('click downvote', function() {
+});
+
+test('click star', function() {
 });
