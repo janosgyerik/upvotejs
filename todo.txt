@@ -1,32 +1,3 @@
-add perfect SE clone mock
+implement clicking
 
-make the test replicate the mock using different params
-
-params
-    count
-    upvoted
-    downvoted
-    starred
-
-methods
-    upvote
-        if upvoted
-            clear upvoted
-            --count
-        else
-            clear downvoted
-            set upvoted
-            ++count
-        send to server
-    downvote
-        if downvoted
-            clear downvoted
-            ++count
-        else
-            clear upvoted
-            set downvoted
-            --count
-        send to server
-    star
-        toggle starred
-    
+css class "on" "off" not so good (too short)

@@ -38,25 +38,49 @@
         downvoted = options.downvoted;
         starred = options.starred;
 
+        __render();
+
+        return this;
+    }
+
+    function __render() {
         obj.find('.count').text(count);
         if (upvoted) {
             obj.find('.upvote').removeClass('off');
             obj.find('.upvote').addClass('on');
+            obj.find('.downvote').removeClass('on');
+            obj.find('.downvote').addClass('off');
         }
         else if (downvoted) {
             obj.find('.downvote').removeClass('off');
             obj.find('.downvote').addClass('on');
+            obj.find('.upvote').removeClass('on');
+            obj.find('.upvote').addClass('off');
         }
         if (starred) {
             obj.find('.star').removeClass('off');
             obj.find('.star').addClass('on');
         }
+    }
 
-        return this;
+    function _count() {
+        return count;
     }
 
     function _upvote() {
-        // todo
+        if (upvoted) {
+            upvoted = false;
+            --count;
+        }
+        else {
+            upvoted = true;
+            ++count;
+            if (downvoted) {
+                downvoted = false;
+                ++count;
+            }
+        }
+        __render();
         return this;
     }
 
@@ -72,6 +96,7 @@
 
     var methods = {
         init: _init,
+        count: _count,
         upvote: _upvote,
         downvote: _downvote,
         star: _star,
