@@ -72,6 +72,16 @@ test('star starred', function() {
     equal(obj.upvote('starred'), false);
 });
 
+test('upvote indepently', function() {
+    var obj1 = gen({count: 5});
+    var count1 = obj1.upvote('count');
+    var obj2 = gen({count: 5});
+    var count2 = obj2.upvote('count');
+    obj1.upvote('upvote');
+    equal(obj1.upvote('count'), count1 + 1);
+    equal(obj2.upvote('count'), count2);
+});
+
 test('click upvote', function() {
 });
 
