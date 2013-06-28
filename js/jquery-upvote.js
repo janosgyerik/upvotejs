@@ -47,6 +47,18 @@
         });
     }
 
+    function _click_upvote() {
+        this.find('.upvote').click();
+    }
+
+    function _click_downvote() {
+        this.find('.downvote').click();
+    }
+
+    function _click_star() {
+        this.find('.star').click();
+    }
+
     function render(this_) {
         var that, data;
         if (this_ instanceof jQuery) {
@@ -144,6 +156,9 @@
         downvote: downvote,
         starred: starred,
         star: star,
+        _click_upvote: _click_upvote,
+        _click_downvote: _click_downvote,
+        _click_star: _click_star,
         destroy: destroy
     };
 

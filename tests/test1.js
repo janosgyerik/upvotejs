@@ -109,10 +109,21 @@ test('star indepently', function() {
 });
 
 test('click upvote', function() {
+    var obj = gen({count: 5});
+    var count = obj.upvote('count');
+    obj.upvote('_click_upvote');
+    equal(obj.upvote('count'), count + 1);
 });
 
 test('click downvote', function() {
+    var obj = gen({count: 5});
+    var count = obj.upvote('count');
+    obj.upvote('_click_downvote');
+    equal(obj.upvote('count'), count - 1);
 });
 
 test('click star', function() {
+    var obj = gen({count: 5});
+    obj.upvote('_click_star');
+    equal(obj.upvote('starred'), true);
 });
