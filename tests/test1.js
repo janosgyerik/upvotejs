@@ -82,6 +82,26 @@ test('upvote indepently', function() {
     equal(obj2.upvote('count'), count2);
 });
 
+test('downvote indepently', function() {
+    var obj1 = gen({count: 5});
+    var count1 = obj1.upvote('count');
+    var obj2 = gen({count: 5});
+    var count2 = obj2.upvote('count');
+    obj1.upvote('downvote');
+    equal(obj1.upvote('count'), count1 - 1);
+    equal(obj2.upvote('count'), count2);
+});
+
+test('star indepently', function() {
+    var obj1 = gen({count: 5});
+    var starred1 = obj1.upvote('starred');
+    var obj2 = gen({count: 5});
+    var starred2 = obj2.upvote('starred');
+    obj1.upvote('star');
+    equal(obj1.upvote('starred'), true);
+    equal(obj2.upvote('starred'), false);
+});
+
 test('click upvote', function() {
 });
 
