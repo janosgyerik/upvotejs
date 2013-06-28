@@ -27,29 +27,40 @@
 
             this.data = $.extend({}, defaults, options);
 
+            this.ui = methods.createUI.call(this);
+
             var that = $(this);
             that.data(this.data);
+            render(this);
         });
     }
 
-    function __render() {
-        return;
-        obj.find('.count').text(count);
-        if (upvoted) {
-            obj.find('.upvote').removeClass('off');
-            obj.find('.upvote').addClass('on');
-            obj.find('.downvote').removeClass('on');
-            obj.find('.downvote').addClass('off');
+    function render(this_) {
+        var that, data;
+        if (this_ instanceof jQuery) {
+            that = this_;
+            data = this_.data();
         }
-        else if (downvoted) {
-            obj.find('.downvote').removeClass('off');
-            obj.find('.downvote').addClass('on');
-            obj.find('.upvote').removeClass('on');
-            obj.find('.upvote').addClass('off');
+        else {
+            that = $(this_);
+            data = this_.data;
         }
-        if (starred) {
-            obj.find('.star').removeClass('off');
-            obj.find('.star').addClass('on');
+        that.find('.count').text(data.count);
+        if (data.upvoted) {
+            that.find('.upvote').removeClass('off');
+            that.find('.upvote').addClass('on');
+            that.find('.downvote').removeClass('on');
+            that.find('.downvote').addClass('off');
+        }
+        else if (data.downvoted) {
+            that.find('.downvote').removeClass('off');
+            that.find('.downvote').addClass('on');
+            that.find('.upvote').removeClass('on');
+            that.find('.upvote').addClass('off');
+        }
+        if (data.starred) {
+            that.find('.star').removeClass('off');
+            that.find('.star').addClass('on');
         }
     }
 
@@ -71,7 +82,7 @@
                 ++data.count;
             }
         }
-        __render();
+        render(this);
         return this;
     }
 
@@ -89,19 +100,24 @@
                 --data.count;
             }
         }
-        __render();
+        render(this);
         return this;
     }
 
     function star() {
         var data = this.data();
         data.starred = ! data.starred;
-        __render();
+        render(this);
         return this;
     }
 
     function starred() {
         return this.data('starred');
+    }
+
+    function createUI() {
+        var that = $(this);
+        return that;
     }
 
     var methods = {
@@ -111,6 +127,7 @@
         downvote: downvote,
         starred: starred,
         star: star,
+        createUI: createUI,
         destroy: destroy
     };
 

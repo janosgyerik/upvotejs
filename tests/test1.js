@@ -18,6 +18,12 @@ test('sanity', function() {
     gen({count: 7, starred: true});
 });
 
+test('sanity2', function() {
+    ok(gen());
+    var obj = gen({count: 17});
+    obj.upvote('upvote');
+});
+
 test('upvote non-downvoted non-upvoted', function() {
     var obj = gen({count: 5});
     var count = obj.upvote('count');
