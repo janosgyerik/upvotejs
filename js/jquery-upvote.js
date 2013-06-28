@@ -28,7 +28,7 @@
     var downvoted;
     var starred;
 
-    function _init(options) {
+    function init(options) {
         obj = this;
         var options = $.extend({}, defaults, options);
 
@@ -111,7 +111,7 @@
     }
 
     var methods = {
-        init: _init,
+        init: init,
         count: _count,
         upvote: _upvote,
         downvote: _downvote,
