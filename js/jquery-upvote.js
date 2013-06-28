@@ -30,7 +30,7 @@
 
             var that = $(this);
             that.data(namespace, this.data);
-            render(this);
+            render(that);
             setupUI(this);
         });
     }
@@ -60,16 +60,8 @@
         this.find('.star').click();
     }
 
-    function render(this_) {
-        var that, data;
-        if (this_ instanceof jQuery) {
-            that = this_;
-            data = this_.data(namespace);
-        }
-        else {
-            that = $(this_);
-            data = this_.data;
-        }
+    function render(that) {
+        var data = that.data(namespace);
         that.find('.count').text(data.count);
         if (data.upvoted) {
             that.find('.upvote').addClass('upvoted');
@@ -144,6 +136,7 @@
 
     var methods = {
         init: init,
+        render: render,
         count: count,
         upvote: upvote,
         downvote: downvote,
