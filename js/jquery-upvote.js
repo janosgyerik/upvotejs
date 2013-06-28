@@ -36,13 +36,13 @@
 
     function setupUI(this_) {
         var that = $(this_);
-        that.find('.upvote').click(function() {
+        that.find('.upvote').on('click.upvote', function() {
             that.upvote('upvote');
         });
-        that.find('.downvote').click(function() {
+        that.find('.downvote').on('click.upvote', function() {
             that.upvote('downvote');
         });
-        that.find('.star').click(function() {
+        that.find('.star').on('click.upvote', function() {
             that.upvote('star');
         });
     }

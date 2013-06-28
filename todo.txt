@@ -1,18 +1,15 @@
-gh-pages
-
-callback to service + unit test
-
-namespaced event bindings
-
 readme
 
-skinning
-    custom template
-    custom selectors
-    custom sprites
+callback to service + unit test
 
 demo
     sample markup
     link to unit tests
     multiple styles
+    gh-pages
+
+skinning
+    custom template
+    custom selectors
+    custom sprites
 
