@@ -22,16 +22,15 @@
     }; 
 
     var obj;
-    var options;
 
     var count;
     var upvoted;
     var downvoted;
     var starred;
 
-    function _init(options_) {
+    function _init(options) {
         obj = this;
-        options = $.extend({}, defaults, options_);
+        var options = $.extend({}, defaults, options);
 
         count = options.count;
         upvoted = options.upvoted;
