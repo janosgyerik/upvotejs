@@ -135,7 +135,6 @@
 
     var methods = {
         init: init,
-        render: render,
         count: count,
         upvote: upvote,
         downvote: downvote,
