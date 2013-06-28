@@ -14,6 +14,7 @@
 
 (function($) {
     "use strict";
+    var namespace = 'upvote';
     var defaults = {  
         count: 0,
         upvoted: false,
@@ -28,7 +29,7 @@
             this.data = $.extend({}, defaults, options);
 
             var that = $(this);
-            that.data(this.data);
+            that.data(namespace, this.data);
             render(this);
             setupUI(this);
         });
@@ -36,13 +37,13 @@
 
     function setupUI(this_) {
         var that = $(this_);
-        that.find('.upvote').on('click.upvote', function() {
+        that.find('.upvote').on('click.' + namespace, function() {
             that.upvote('upvote');
         });
-        that.find('.downvote').on('click.upvote', function() {
+        that.find('.downvote').on('click.' + namespace, function() {
             that.upvote('downvote');
         });
-        that.find('.star').on('click.upvote', function() {
+        that.find('.star').on('click.' + namespace, function() {
             that.upvote('star');
         });
     }
@@ -63,7 +64,7 @@
         var that, data;
         if (this_ instanceof jQuery) {
             that = this_;
-            data = this_.data();
+            data = this_.data(namespace);
         }
         else {
             that = $(this_);
@@ -91,11 +92,11 @@
     }
 
     function count() {
-        return this.data('count');
+        return this.data(namespace).count;
     }
 
     function upvote() {
-        var data = this.data();
+        var data = this.data(namespace);
         if (data.upvoted) {
             data.upvoted = false;
             --data.count;
@@ -113,7 +114,7 @@
     }
 
     function downvote() {
-        var data = this.data();
+        var data = this.data(namespace);
         if (data.downvoted) {
             data.downvoted = false;
             ++data.count;
@@ -131,14 +132,14 @@
     }
 
     function star() {
-        var data = this.data();
+        var data = this.data(namespace);
         data.starred = ! data.starred;
         render(this);
         return this;
     }
 
     function starred() {
-        return this.data('starred');
+        return this.data(namespace).starred;
     }
 
     var methods = {
@@ -156,10 +157,8 @@
 
     function destroy() {
         return $(this).each(function() {
-            $(window).unbind('.upvote');
-            //var $this = $(this), data = $this.data('upvote');
-            ////data.upvote.remove();
-            ////$this.removeData('upvote');
+            $(window).unbind('.' + namespace);
+            $(this).removeData(namespace);
         });
     }
 
