@@ -26,10 +26,10 @@
         return this.each(function() {
             methods.destroy.call(this);
 
-            this.data = $.extend({}, defaults, options);
+            var data = $.extend({}, defaults, options);
 
             var that = $(this);
-            that.data(namespace, this.data);
+            that.data(namespace, data);
             render(that);
             setupUI(this);
         });
