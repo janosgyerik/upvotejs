@@ -31,12 +31,11 @@
             var that = $(this);
             that.data(namespace, data);
             render(that);
-            setupUI(this);
+            setupUI(that);
         });
     }
 
-    function setupUI(this_) {
-        var that = $(this_);
+    function setupUI(that) {
         that.find('.upvote').on('click.' + namespace, function() {
             that.upvote('upvote');
         });
