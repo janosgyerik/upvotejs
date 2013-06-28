@@ -71,30 +71,22 @@
         }
         that.find('.count').text(data.count);
         if (data.upvoted) {
-            that.find('.upvote').removeClass('off');
-            that.find('.upvote').addClass('on');
-            that.find('.downvote').removeClass('on');
-            that.find('.downvote').addClass('off');
+            that.find('.upvote').addClass('upvoted');
+            that.find('.downvote').removeClass('downvoted');
         }
         else if (data.downvoted) {
-            that.find('.downvote').removeClass('off');
-            that.find('.downvote').addClass('on');
-            that.find('.upvote').removeClass('on');
-            that.find('.upvote').addClass('off');
+            that.find('.upvote').removeClass('upvoted');
+            that.find('.downvote').addClass('downvoted');
         }
         else {
-            that.find('.upvote').removeClass('on');
-            that.find('.upvote').addClass('off');
-            that.find('.downvote').removeClass('on');
-            that.find('.downvote').addClass('off');
+            that.find('.upvote').removeClass('upvoted');
+            that.find('.downvote').removeClass('downvoted');
         }
         if (data.starred) {
-            that.find('.star').removeClass('off');
-            that.find('.star').addClass('on');
+            that.find('.star').addClass('starred');
         }
         else {
-            that.find('.star').removeClass('on');
-            that.find('.star').addClass('off');
+            that.find('.star').removeClass('starred');
         }
     }
 

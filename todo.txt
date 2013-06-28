@@ -1,5 +1,18 @@
-css class "on" "off" not so good (too short)
-
 gh-pages
 
 callback to service + unit test
+
+namespaced event bindings
+
+readme
+
+skinning
+    custom template
+    custom selectors
+    custom sprites
+
+demo
+    sample markup
+    link to unit tests
+    multiple styles
+

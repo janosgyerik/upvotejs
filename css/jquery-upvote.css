@@ -7,8 +7,6 @@ div.upvote a {
     background-image: url('../images/sprites.png?v=1');
     background-repeat: no-repeat;
     overflow: hidden;
-
-    background-position: 0px -265px;
     display: block;
     margin: 0 auto;
     width: 41px;
@@ -22,32 +20,28 @@ div.upvote span.count {
     color: #555;
 }
 
-div.upvote a.upvote.on {
-    background-position: 0px -230px;
-}
-
-div.upvote a.upvote.off {
+div.upvote a.upvote {
     background-position: 0px -265px;
 }
 
-div.upvote a.downvote.on {
-    background-position: 0px -330px;
+div.upvote a.upvote.upvoted {
+    background-position: 0px -230px;
 }
 
-div.upvote a.downvote.off {
+div.upvote a.downvote {
     background-position: 0px -300px;
+}
+
+div.upvote a.downvote.downvoted {
+    background-position: 0px -330px;
 }
 
 div.upvote a.star {
     width: 33px;
     height: 31px;
-}
-
-div.upvote a.star.on {
-    background-position: 0px -190px;
-}
-
-div.upvote a.star.off {
     background-position: 0px -150px;
 }
 
+div.upvote a.star.starred {
+    background-position: 0px -190px;
+}
