@@ -53,11 +53,11 @@
         }
     }
 
-    function _count() {
+    function count() {
         return this.data('count');
     }
 
-    function _upvote() {
+    function upvote() {
         var data = this.data();
         if (data.upvoted) {
             data.upvoted = false;
@@ -75,7 +75,7 @@
         return this;
     }
 
-    function _downvote() {
+    function downvote() {
         var data = this.data();
         if (data.downvoted) {
             data.downvoted = false;
@@ -93,28 +93,28 @@
         return this;
     }
 
-    function _star() {
+    function star() {
         var data = this.data();
         data.starred = ! data.starred;
         __render();
         return this;
     }
 
-    function _starred() {
+    function starred() {
         return this.data('starred');
     }
 
     var methods = {
         init: init,
-        count: _count,
-        upvote: _upvote,
-        downvote: _downvote,
-        starred: _starred,
-        star: _star,
-        destroy: _destroy
+        count: count,
+        upvote: upvote,
+        downvote: downvote,
+        starred: starred,
+        star: star,
+        destroy: destroy
     };
 
-    function _destroy() {
+    function destroy() {
         return $(this).each(function() {
             $(window).unbind('.upvote');
             //var $this = $(this), data = $this.data('upvote');
