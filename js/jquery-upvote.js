@@ -27,11 +27,23 @@
 
             this.data = $.extend({}, defaults, options);
 
-            this.ui = methods.createUI.call(this);
-
             var that = $(this);
             that.data(this.data);
             render(this);
+            setupUI(this);
+        });
+    }
+
+    function setupUI(this_) {
+        var that = $(this_);
+        that.find('.upvote').click(function() {
+            that.upvote('upvote');
+        });
+        that.find('.downvote').click(function() {
+            that.upvote('downvote');
+        });
+        that.find('.star').click(function() {
+            that.upvote('star');
         });
     }
 
@@ -58,9 +70,19 @@
             that.find('.upvote').removeClass('on');
             that.find('.upvote').addClass('off');
         }
+        else {
+            that.find('.upvote').removeClass('on');
+            that.find('.upvote').addClass('off');
+            that.find('.downvote').removeClass('on');
+            that.find('.downvote').addClass('off');
+        }
         if (data.starred) {
             that.find('.star').removeClass('off');
             that.find('.star').addClass('on');
+        }
+        else {
+            that.find('.star').removeClass('on');
+            that.find('.star').addClass('off');
         }
     }
 
@@ -115,11 +137,6 @@
         return this.data('starred');
     }
 
-    function createUI() {
-        var that = $(this);
-        return that;
-    }
-
     var methods = {
         init: init,
         count: count,
@@ -127,7 +144,6 @@
         downvote: downvote,
         starred: starred,
         star: star,
-        createUI: createUI,
         destroy: destroy
     };
 
