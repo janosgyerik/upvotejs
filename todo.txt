@@ -1,6 +1,14 @@
-readme
+make this work:
+    <div id="topic"></div>
+    $('#topic').upvote();
+
+make it easier to embed
+    put all files in lib/
+    rename main js to jquery.upvote.js
 
 callback to service + unit test
+
+pick up initial values from $(this) if any
 
 demo
     sample markup
@@ -13,3 +21,7 @@ skinning
     custom selectors
     custom sprites
 
+publish
+    http://codereview.stackexchange.com/questions
+    jquery plugins website
+    http://archive.plugins.jquery.com/project/upvote

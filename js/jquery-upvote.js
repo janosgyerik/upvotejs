@@ -1,18 +1,27 @@
 /*!
- * jQuery Upvote Plugin v0.1
+ * jQuery Upvote - a voting plugin
+ * ------------------------------------------------------------------
  *
- * A voting widget based on Stack Exchange sites.
+ * jQuery Upvote is a plugin that generates a voting widget like
+ * the one used on Stack Exchange sites.
  *
- * Date: Wed Jun 19 21:06:05 CEST 2013
- * Requires: jQuery v2.x
+ * Licensed under Creative Commons Attribution 3.0 Unported
+ * http://creativecommons.org/licenses/by/3.0/
  *
- * Copyright 2013, Janos Gyerik
- * Dual licensed under the MIT or GPL Version 2 licenses.
- * http://jquery.org/license
+ * @version         0.1
+ * @since           2013.06.19
+ * @author          Janos Gyerik
+ * @documentation   https://janosgyerik.github.io/jquery-upvote
  *
-*/
+ * ------------------------------------------------------------------
+ *
+ *  <div id="topic"></div>
+ *
+ *  $('#topic').upvote();
+ *
+ */
 
-(function($) {
+;(function($) {
     "use strict";
     var namespace = 'upvote';
     var defaults = {  
