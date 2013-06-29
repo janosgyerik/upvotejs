@@ -21,9 +21,9 @@ Version
 
 Required files
 --------------
-+ jquery.upvote.js
-+ jquery.upvote.css
-+ images/sprites.png
++ lib/jquery.upvote.js
++ lib/jquery.upvote.css
++ lib/images/sprites.png
 
 
 Options

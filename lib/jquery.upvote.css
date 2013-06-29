@@ -4,7 +4,7 @@ div.upvote {
 
 div.upvote a {
     color: transparent;
-    background-image: url('../images/sprites.png?v=1');
+    background-image: url('images/sprites.png?v=1');
     background-repeat: no-repeat;
     overflow: hidden;
     display: block;
