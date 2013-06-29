@@ -4,7 +4,7 @@ div.upvote {
 
 div.upvote a {
     color: transparent;
-    background-image: url('images/sprites.png?v=1');
+    background-image: url('images/sprites-stackoverflow.png?v=1');
     background-repeat: no-repeat;
     overflow: hidden;
     display: block;
@@ -44,4 +44,8 @@ div.upvote a.star {
 
 div.upvote a.star.starred {
     background-position: 0px -190px;
+}
+
+div.upvote-serverfault a {
+    background-image: url('images/sprites-serverfault.png?v=1');
 }
