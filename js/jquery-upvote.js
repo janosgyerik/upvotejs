@@ -15,9 +15,15 @@
  *
  * ------------------------------------------------------------------
  *
- *  <div id="topic"></div>
+ *  <div id="topic" class="upvote">
+ *    <a class="upvote"></a>
+ *    <span class="count"></span>
+ *    <a class="downvote"></a>
+ *    <a class="star"></a>
+ *  </div>
  *
  *  $('#topic').upvote();
+ *  $('#topic').upvote({count: 5, upvoted: true});
  *
  */
 

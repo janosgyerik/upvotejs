@@ -14,15 +14,12 @@
     <link rel="stylesheet" href="../css/jquery-upvote.css">
     <style type="text/css">
 	<!--
-	.clear {
-	    clear: both;
-	}
 	.hidden {
 	    display: none;
 	}
-	.floatleft {
-	    float: left;
-	}
+    .upvote {
+        float: left;
+    }
 	-->
     </style>
 </head>
@@ -30,12 +27,32 @@
     <h1 id="qunit-header">jQuery Upvote Test</h1>
     <h2 id="qunit-banner"></h2>
     <h2 id="qunit-userAgent"></h2>
-    <div id="demo"></div>
-    <div class="clear"></div>
+    <div id="demo" style="overflow: auto">
+        <div id="demo1" class="upvote">
+            <a class="upvote"></a>
+            <span class="count"></span>
+            <a class="downvote"></a>
+            <a class="star"></a>
+        </div>
+        <div id="demo2" class="upvote">
+            <a class="upvote"></a>
+            <span class="count"></span>
+            <a class="downvote"></a>
+            <a class="star"></a>
+        </div>
+        <div id="demo3" class="upvote">
+            <a class="upvote"></a>
+            <span class="count"></span>
+            <a class="downvote"></a>
+            <a class="star"></a>
+        </div>
+    </div>
+    <div id="tests" style="overflow: auto">
+    </div>
     <ol id="qunit-tests"></ol>
     <div id="qunit-fixture"></div>
     <div id="templates" class="hidden">
-        <div class="upvote" style="float: left">
+        <div class="upvote">
             <a class="upvote" title="This is good stuff. Vote it up! (Click again to undo)"></a>
             <span class="count" title="Total number of votes"></span>
             <a class="downvote" title="This is not useful. Vote it down. (Click again to undo)"></a>

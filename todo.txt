@@ -1,7 +1,3 @@
-make this work:
-    <div id="topic"></div>
-    $('#topic').upvote();
-
 make it easier to embed
     put all files in lib/
     rename main js to jquery.upvote.js

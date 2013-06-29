@@ -1,6 +1,6 @@
 function gen(params) {
     var html = $('#templates .upvote').clone();
-    $('#demo').append(html);
+    $('#tests').append(html);
     return html.upvote(params);
 }
 
@@ -22,6 +22,13 @@ test('sanity2', function() {
     ok(gen());
     var obj = gen({count: 17});
     obj.upvote('upvote');
+});
+
+test('demo', function() {
+    $('#demo1').upvote({count: 1, upvoted: 1});
+    $('#demo2').upvote({count: 2, downvoted: 1});
+    $('#demo3').upvote({count: 3, starred: 1});
+    ok(1);
 });
 
 test('upvote non-downvoted non-upvoted', function() {
