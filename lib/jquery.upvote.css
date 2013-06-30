@@ -2,6 +2,10 @@ div.upvote {
     text-align: center;
 }
 
+div.upvote a.upvote-enabled {
+    cursor: pointer;
+}
+
 div.upvote a {
     color: transparent;
     background-image: url('images/sprites-stackoverflow.png?v=1');
