@@ -52,27 +52,17 @@
                 function gen_programmers(params) {
                     gen('#programmers', 'upvote-programmers', params);
                 }
-                gen_examples();
-                gen_examples({count: 5});
-                gen_examples({count: 6, upvoted: 1});
-                gen_examples({count: 4, downvoted: 1});
-                gen_examples({count: 15, starred: 1});
-                gen_examples({count: 16, upvoted: 1, starred: 1});
-                gen_examples({count: 14, downvoted: 1, starred: 1});
-                gen_unix();
-                gen_unix({count: 5});
-                gen_unix({count: 6, upvoted: 1});
-                gen_unix({count: 4, downvoted: 1});
-                gen_unix({count: 15, starred: 1});
-                gen_unix({count: 16, upvoted: 1, starred: 1});
-                gen_unix({count: 14, downvoted: 1, starred: 1});
-                gen_programmers();
-                gen_programmers({count: 5});
-                gen_programmers({count: 6, upvoted: 1});
-                gen_programmers({count: 4, downvoted: 1});
-                gen_programmers({count: 15, starred: 1});
-                gen_programmers({count: 16, upvoted: 1, starred: 1});
-                gen_programmers({count: 14, downvoted: 1, starred: 1});
+                var functions = [gen_examples, gen_unix, gen_programmers];
+                for (var i in functions) {
+                    var fun = functions[i];
+                    fun();
+                    fun({count: 5});
+                    fun({count: 6, upvoted: 1});
+                    fun({count: 4, downvoted: 1});
+                    fun({count: 15, starred: 1});
+                    fun({count: 16, upvoted: 1, starred: 1});
+                    fun({count: 14, downvoted: 1, starred: 1});
+                }
         });
     </script>    
 </head>
