@@ -1,14 +1,13 @@
 demo
-    fix stackoverflow count style -- question
-    fix unix count style -- question
-    fix programmers count style -- question
+    fix stackoverflow count style (for bootstrap) -- question
+    fix unix count style (for bootstrap) -- question
+    fix programmers count style (for bootstrap) -- question
     create gh-pages
-    update github description and website address
 
-pick up initial values from $(this) if any
+! pick up initial values from $(this) if any
     ! would greatly simplify the setup
 
-callback to service + unit test
+! callback to service + unit test
     ! useless eye-candy without this...
 
 publish

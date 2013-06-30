@@ -23,7 +23,7 @@ Required files
 --------------
 + lib/jquery.upvote.js
 + lib/jquery.upvote.css
-+ lib/images/sprites.png
++ lib/images/sprites-stackoverflow.png
 
 
 Options
