@@ -1,0 +1,190 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>jQuery Upvote</title>
+    <meta name="author" content="Janos Gyerik">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://twitter.github.io/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="http://twitter.github.io/bootstrap/assets/css/bootstrap-responsive.css" rel="stylesheet">
+
+    <script src="js/jquery-2.0.2.min.js"></script>
+    <script src="lib/jquery.upvote.js"></script>
+
+    <link rel="stylesheet" href="lib/jquery.upvote.css">
+    <style type="text/css">
+	<!--
+	.hidden {
+	    display: none;
+	}
+    .examples {
+        overflow: auto;
+    }
+    .examples .upvote {
+        float: left;
+    }
+	-->
+    </style>
+    <script type="text/javascript">
+        function gen(target, cssClass, params) {
+            var obj = $('#templates .upvote').clone();
+            obj.addClass(cssClass);
+            $(target).append(obj);
+            return obj.upvote(params);
+        }
+
+        $(function() {
+                function gen_examples(params) {
+                    gen('#examples', '', params);
+                }
+                function gen_unix(params) {
+                    gen('#unix', 'upvote-unix', params);
+                }
+                function gen_programmers(params) {
+                    gen('#programmers', 'upvote-programmers', params);
+                }
+                gen_examples();
+                gen_examples({count: 5});
+                gen_examples({count: 6, upvoted: 1});
+                gen_examples({count: 4, downvoted: 1});
+                gen_examples({count: 15, starred: 1});
+                gen_examples({count: 16, upvoted: 1, starred: 1});
+                gen_examples({count: 14, downvoted: 1, starred: 1});
+                gen_unix();
+                gen_unix({count: 5});
+                gen_unix({count: 6, upvoted: 1});
+                gen_unix({count: 4, downvoted: 1});
+                gen_unix({count: 15, starred: 1});
+                gen_unix({count: 16, upvoted: 1, starred: 1});
+                gen_unix({count: 14, downvoted: 1, starred: 1});
+                gen_programmers();
+                gen_programmers({count: 5});
+                gen_programmers({count: 6, upvoted: 1});
+                gen_programmers({count: 4, downvoted: 1});
+                gen_programmers({count: 15, starred: 1});
+                gen_programmers({count: 16, upvoted: 1, starred: 1});
+                gen_programmers({count: 14, downvoted: 1, starred: 1});
+        });
+    </script>    
+</head>
+<body>
+    <a href="http://github.com/janosgyerik/jquery-upvote"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub" /></a>
+    <div class="container">
+        <h1>jQuery Upvote - a voting plugin</h1>
+        <div>jQuery Upvote is a plugin that generates a voting widget like the one used on <a href="http://stackoverflow.com/">Stack Exchange</a> sites</div>
+
+        <h2>Examples</h2>
+        <div class="examples" id="examples"></div>
+
+        <h2>unix.stackexchange.com style</h2>
+        <div class="examples" id="unix"></div>
+
+        <h2>programmers.stackexchange.com style</h2>
+        <div class="examples" id="programmers"></div>
+
+        <h2>Markup ("read-only" examples)</h2>
+        <div class="row">
+            <div class="span6">
+                <h3>Basic</h3>
+                <div class="row">
+                    <div class="span1">
+                        <div class="upvote">
+                            <a class="upvote"></a>
+                            <span class="count">5</span>
+                            <a class="downvote"></a>
+                            <a class="star"></a>
+                        </div>
+                    </div>
+                    <div class="span5">
+                        <pre>
+&lt;div class="upvote"&gt;
+    &lt;a class="upvote"&gt;&lt;/a&gt;
+    &lt;span class="count"&gt;5&lt;/span&gt;
+    &lt;a class="downvote"&gt;&lt;/a&gt;
+    &lt;a class="star"&gt;&lt;/a&gt;
+&lt;/div&gt;</pre>
+                    </div>
+                </div>
+            </div><!-- end of column -->
+            <div class="span6">
+                <h3>Upvoted</h3>
+                <div class="row">
+                    <div class="span1">
+                        <div class="upvote">
+                            <a class="upvote upvoted"></a>
+                            <span class="count">6</span>
+                            <a class="downvote"></a>
+                            <a class="star"></a>
+                        </div>
+                    </div>
+                    <div class="span5">
+                        <pre>
+&lt;div class="upvote"&gt;
+    &lt;a class="upvote"&gt;&lt;/a&gt;
+    &lt;span class="count"&gt;6&lt;/span&gt;
+    &lt;a class="downvote"&gt;&lt;/a&gt;
+    &lt;a class="star"&gt;&lt;/a&gt;
+&lt;/div&gt;</pre>
+                    </div>
+                </div>
+            </div><!-- end of column -->
+        </div><!-- end of row -->
+        <div class="row">
+            <div class="span6">
+                <h3>Downvoted</h3>
+                <div class="row">
+                    <div class="span1">
+                        <div class="upvote">
+                            <a class="upvote"></a>
+                            <span class="count">4</span>
+                            <a class="downvote downvoted"></a>
+                            <a class="star"></a>
+                        </div>
+                    </div>
+                    <div class="span5">
+                        <pre>
+&lt;div class="upvote"&gt;
+    &lt;a class="upvote"&gt;&lt;/a&gt;
+    &lt;span class="count"&gt;4&lt;/span&gt;
+    &lt;a class="downvote downvoted"&gt;&lt;/a&gt;
+    &lt;a class="star"&gt;&lt;/a&gt;
+&lt;/div&gt;</pre>
+                    </div>
+                </div>
+            </div><!-- end of column -->
+            <div class="span6">
+                <h3>Upvoted and starred</h3>
+                <div class="row">
+                    <div class="span1">
+                        <div class="upvote">
+                            <a class="upvote upvoted"></a>
+                            <span class="count">6</span>
+                            <a class="downvote"></a>
+                            <a class="star starred"></a>
+                        </div>
+                    </div>
+                    <div class="span5">
+                        <pre>
+&lt;div class="upvote"&gt;
+    &lt;a class="upvote"&gt;&lt;/a&gt;
+    &lt;span class="count"&gt;6&lt;/span&gt;
+    &lt;a class="downvote"&gt;&lt;/a&gt;
+    &lt;a class="star starred"&gt;&lt;/a&gt;
+&lt;/div&gt;</pre>
+                    </div>
+                </div>
+            </div><!-- end of column -->
+        </div><!-- end of row -->
+    </div>
+    <div id="templates" class="hidden">
+        <div class="upvote">
+            <a class="upvote" title="This is good stuff. Vote it up! (Click again to undo)"></a>
+            <span class="count" title="Total number of votes"></span>
+            <a class="downvote" title="This is not useful. Vote it down. (Click again to undo)"></a>
+            <a class="star" title="Mark as favorite. (Click again to undo)"></a>
+        </div>
+    </div>
+</body>
+</html>
