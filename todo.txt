@@ -3,8 +3,6 @@ demo
     fix stackoverflow count style -- question
     fix unix count style -- question
     fix programmers count style -- question
-    add unix markup
-    add programmers markup
     add link to unit tests
     add link to docs (= the readme)
     create gh-pages
