@@ -36,27 +36,67 @@ starred     : false
 ```
 
 
-Usage
------
+Markup
+------
+Basic example:
 ```html
 <div id="topic" class="upvote">
     <a class="upvote"></a>
-    <span class="count"></span>
+    <span class="count">0</span>
     <a class="downvote"></a>
     <a class="star"></a>
 </div>
 ```
 
-```js
-$('#topic').upvote();
-$('#topic').upvote({count: 5, upvoted: true});
+Upvoted:
+```html
+<div id="topic" class="upvote">
+    <a class="upvote upvoted"></a>
+    <span class="count">6</span>
+    <a class="downvote"></a>
+    <a class="star"></a>
+</div>
+```
+
+Downvoted:
+```html
+<div id="topic" class="upvote">
+    <a class="upvote"></a>
+    <span class="count">4</span>
+    <a class="downvote downvoted"></a>
+    <a class="star"></a>
+</div>
+```
+
+Starred:
+```html
+<div id="topic" class="upvote">
+    <a class="upvote"></a>
+    <span class="count">5</span>
+    <a class="downvote"></a>
+    <a class="star starred"></a>
+</div>
 ```
 
 
-Functions
----------
+Initialization examples
+-----------------------
 ```js
+$('#topic').upvote();
+$('#topic').upvote({count: 5, upvoted: 1});
+$('#topic').upvote({count: 5, downvoted: 1});
+$('#topic').upvote({count: 5, upvoted: 1, starred: 1});
+```
+
+
+Methods
+-------
+```js
+$('#topic').upvote('upvote');       // Upvote!
+$('#topic').upvote('downvote');     // Downvote!
 $('#topic').upvote('count');        // Get the current vote count
+$('#topic').upvote('star');         // Star!
+$('#topic').upvote('starred');      // Get the current starred state
 ```
 
 
