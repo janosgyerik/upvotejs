@@ -31,6 +31,18 @@ test('demo', function() {
     ok(1);
 });
 
+test('styles', function() {
+    var styles = ['serverfault', 'unix', 'programmers'];
+    for (var i in styles) {
+        var style = 'upvote-' + styles[i];
+        var obj1 = gen({count: 1, upvoted: 1});
+        var obj2 = gen({count: 234, downvoted: 1, starred: 1});
+        obj1.addClass(style);
+        obj2.addClass(style);
+    }
+    ok(1);
+});
+
 test('upvote non-downvoted non-upvoted', function() {
     var obj = gen({count: 5});
     var count = obj.upvote('count');
