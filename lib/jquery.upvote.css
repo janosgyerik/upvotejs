@@ -23,6 +23,7 @@ div.upvote span.count {
     font-family: Arial, Liberation, Sans, DejaVu Sans, sans-serif;
     color: #555;
     text-align: center;
+    line-height: 1;
 }
 
 div.upvote a.upvote {
@@ -87,6 +88,18 @@ div.upvote-unix a.star.starred {
     background-position: 0px -164px;
 }
 
+div.upvote-unix span.count {
+    color: #333;
+    line-height: 15px;
+    padding: 9px 0;
+    font-family: "DejaVu Sans Mono","Bitstream Vera Sans Mono","Courier New",Courier,Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter",monospace;
+    text-shadow; 1px 1px 0 #ffffff;
+    font-weight: bold;
+    margin: 0;
+    border: 0;
+    vertical-align: baseline;
+}
+
 div.upvote-programmers a {
     background-image: url('images/sprites-programmers.png?v=1');
     width: 42px;
@@ -117,4 +130,13 @@ div.upvote-programmers a.star {
 
 div.upvote-programmers a.star.starred {
     background-position: 6px -166px;
+}
+
+div.upvote-programmers span.count {
+    color: #333;
+    line-height: 15px;
+    padding: 5px 0 7px;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: Tahoma,Geneva,Arial,sans-serif;
 }

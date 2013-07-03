@@ -1,9 +1,3 @@
-demo
-    fix stackoverflow count style (for bootstrap) -- question
-    fix unix count style (for bootstrap) -- question
-    fix programmers count style (for bootstrap) -- question
-    create gh-pages
-
 ! pick up initial values from $(this) if any
     ! would greatly simplify the setup
 
