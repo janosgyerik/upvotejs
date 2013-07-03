@@ -146,3 +146,25 @@ test('click star', function() {
     obj.upvote('_click_star');
     equal(obj.upvote('starred'), true);
 });
+
+test('preconfigured count=1 upvoted', function() {
+    var obj = $('#count-1-upvoted').upvote();
+    equal(obj.upvote('count'), 1);
+    ok(obj.upvote('upvoted'));
+    ok(!obj.upvote('downvoted'));
+});
+
+test('preconfigured count=2 downvoted', function() {
+    var obj = $('#count-2-downvoted').upvote();
+    equal(obj.upvote('count'), 2);
+    ok(obj.upvote('downvoted'));
+    ok(!obj.upvote('upvoted'));
+});
+
+test('preconfigured count=3 starred', function() {
+    var obj = $('#count-3-starred').upvote();
+    equal(obj.upvote('count'), 3);
+    ok(obj.upvote('starred'));
+    ok(!obj.upvote('upvoted'));
+    ok(!obj.upvote('downvoted'));
+});
