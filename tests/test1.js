@@ -168,3 +168,15 @@ test('preconfigured count=3 starred', function() {
     ok(!obj.upvote('upvoted'));
     ok(!obj.upvote('downvoted'));
 });
+
+test('invalid configuration: upvoted + downvoted -> upvoted', function() {
+    var obj = gen({upvoted: 1, downvoted: 1});
+    ok(obj.upvote('upvoted'));
+    ok(!obj.upvote('downvoted'));
+});
+
+test('preconfigured invalid: upvoted + downvoted -> upvoted', function() {
+    var obj = $('#upvoted-downvoted').upvote();
+    ok(obj.upvote('upvoted'));
+    ok(!obj.upvote('downvoted'));
+});
