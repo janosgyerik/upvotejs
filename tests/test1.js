@@ -17,12 +17,6 @@ function gen(params) {
     return html.upvote(params);
 }
 
-function setUp() {
-    //$('#demo').append(table);
-}
-
-QUnit.begin = setUp;
-
 test('sanity', function() {
     ok(gen());
     gen({count: 2});
