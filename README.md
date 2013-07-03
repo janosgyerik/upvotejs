@@ -11,10 +11,10 @@ the one used on Stack Exchange sites, for example:
 Version
 -------
 ```
-@version         0.1
+@version         1.0.2
 @since           2013.06.19
 @author          Janos Gyerik
-@documentation   https://janosgyerik.github.io/jquery-upvote
+@homepage        https://janosgyerik.github.io/jquery-upvote
 @twitter         twitter.com/janosgyerik
 ```
 
