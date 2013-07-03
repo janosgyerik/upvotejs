@@ -92,11 +92,19 @@ $('#topic').upvote({count: 5, upvoted: 1, starred: 1});
 Methods
 -------
 ```js
+// Create, pick up initial values from HTML markup
+$('#topic').upvote();
+
+// Mutators
 $('#topic').upvote('upvote');       // Upvote!
 $('#topic').upvote('downvote');     // Downvote!
-$('#topic').upvote('count');        // Get the current vote count
 $('#topic').upvote('star');         // Star!
-$('#topic').upvote('starred');      // Get the current starred state
+
+// Getters
+$('#topic').upvote('count');        // Get the current vote count
+$('#topic').upvote('upvoted');      // Get the upvoted state -> boolean
+$('#topic').upvote('downvoted');    // Get the downvoted state -> boolean
+$('#topic').upvote('starred');      // Get the starred state -> boolean
 ```
 
 
