@@ -1,7 +1,0 @@
-! callback to service + unit test
-    ! useless eye-candy without this...
-
-publish
-    jquery plugins website
-    http://archive.plugins.jquery.com/project/upvote
-

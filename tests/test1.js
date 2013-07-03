@@ -1,6 +1,19 @@
+var idcount = 0;
 function gen(params) {
+    ++idcount;
     var html = $('#templates .upvote').clone();
     $('#tests').append(html);
+    if (!params) {
+        params = {};
+    }
+    if (!params.id) {
+        params.id = idcount;
+    }
+    if (!params.callback) {
+        params.callback = function(data) {
+            console.log(data);
+        };
+    }
     return html.upvote(params);
 }
 
@@ -179,4 +192,19 @@ test('preconfigured invalid: upvoted + downvoted -> upvoted', function() {
     var obj = $('#upvoted-downvoted').upvote();
     ok(obj.upvote('upvoted'));
     ok(!obj.upvote('downvoted'));
+});
+
+test('callback', function() {
+    var called_id = 0;
+    var callback = function(data) {
+        called_id = data.id;
+    };
+    var obj1 = gen({count: 177, id: 177, callback: callback});
+    var obj2 = gen({count: 178, id: 178, callback: callback});
+    obj1.upvote('upvote');
+    equal(called_id, 177);
+    obj2.upvote('upvote');
+    equal(called_id, 178);
+    obj1.upvote('upvote');
+    equal(called_id, 177);
 });
