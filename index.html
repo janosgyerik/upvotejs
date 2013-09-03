@@ -50,7 +50,10 @@
                 function gen_programmers(params) {
                     gen('#programmers', 'upvote-programmers', params);
                 }
-                var functions = [gen_examples, gen_unix, gen_programmers];
+                function gen_serverfault(params) {
+                    gen('#serverfault', 'upvote-serverfault', params);
+                }
+                var functions = [gen_examples, gen_unix, gen_programmers, gen_serverfault];
                 for (var i in functions) {
                     var fun = functions[i];
                     fun();
@@ -71,13 +74,27 @@
         <div>jQuery Upvote is a plugin that generates a voting widget like the one used on <a href="http://stackoverflow.com/">Stack Exchange</a> sites.</div>
 
         <h2>Examples</h2>
-        <div class="examples" id="examples"></div>
+        <div class="row">
+            <div class="span6">
+                <h3>stackoverflow.com</h3>
+                <div class="examples" id="examples"></div>
+            </div>
+            <div class="span6">
+                <h3>unix.stackexchange.com</h3>
+                <div class="examples" id="unix"></div>
+            </div>
+        </div>
 
-        <h2>unix.stackexchange.com style</h2>
-        <div class="examples" id="unix"></div>
-
-        <h2>programmers.stackexchange.com style</h2>
-        <div class="examples" id="programmers"></div>
+        <div class="row">
+            <div class="span6">
+                <h3>programmers.stackexchange.com</h3>
+                <div class="examples" id="programmers"></div>
+            </div>
+            <div class="span6">
+                <h3>serverfault.com</h3>
+                <div class="examples" id="serverfault"></div>
+            </div>
+        </div>
 
         <h2>Markup ("read-only" examples)</h2>
         <div class="row">
