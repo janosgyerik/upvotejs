@@ -95,13 +95,13 @@ test('downvote downvoted', function() {
 test('star non-starred', function() {
     var obj = gen();
     obj.upvote('star');
-    equal(obj.upvote('starred'), true);
+    ok(obj.upvote('starred'));
 });
 
 test('star starred', function() {
     var obj = gen({starred: true});
     obj.upvote('star');
-    equal(obj.upvote('starred'), false);
+    ok(!obj.upvote('starred'));
 });
 
 test('upvote indepently', function() {
@@ -130,8 +130,8 @@ test('star indepently', function() {
     var obj2 = gen({count: 5});
     var starred2 = obj2.upvote('starred');
     obj1.upvote('star');
-    equal(obj1.upvote('starred'), true);
-    equal(obj2.upvote('starred'), false);
+    ok(obj1.upvote('starred'));
+    ok(!obj2.upvote('starred'));
 });
 
 test('click upvote', function() {
@@ -151,7 +151,7 @@ test('click downvote', function() {
 test('click star', function() {
     var obj = gen({count: 5});
     obj.upvote('_click_star');
-    equal(obj.upvote('starred'), true);
+    ok(obj.upvote('starred'));
 });
 
 test('preconfigured count=1 upvoted', function() {
