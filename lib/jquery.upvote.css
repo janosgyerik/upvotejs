@@ -56,6 +56,10 @@ div.upvote-serverfault a {
     background-image: url('images/sprites-serverfault.png?v=1');
 }
 
+div.upvote-meta-stackoverflow a {
+    background-image: url('images/sprites-meta-stackoverflow.png?v=1');
+}
+
 div.upvote-unix a {
     background-image: url('images/sprites-unix.png?v=1');
     width: 42px;

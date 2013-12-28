@@ -13,14 +13,14 @@
     <link rel="stylesheet" href="qunit-1.11.0.css">
     <link rel="stylesheet" href="../lib/jquery.upvote.css">
     <style type="text/css">
-	<!--
-	.hidden {
-	    display: none;
-	}
-    div.upvote {
-        float: left;
-    }
-	-->
+    <!--
+      .hidden {
+          display: none;
+      }
+      div.upvote {
+          float: left;
+      }
+    -->
     </style>
 </head>
 <body>
@@ -69,6 +69,24 @@
             <span class="count">4</span>
             <a class="downvote downvoted"></a>
             <a class="star"></a>
+        </div>
+        <div id="count-1-upvoted" class="upvote upvote-meta-stackoverflow">
+            <a class="upvote upvoted"></a>
+            <span class="count">1</span>
+            <a class="downvote"></a>
+            <a class="star"></a>
+        </div>
+        <div id="count-2-downvoted" class="upvote upvote-meta-stackoverflow">
+            <a class="upvote"></a>
+            <span class="count">2</span>
+            <a class="downvote downvoted"></a>
+            <a class="star"></a>
+        </div>
+        <div id="count-3-starred" class="upvote upvote-meta-stackoverflow">
+            <a class="upvote"></a>
+            <span class="count">3</span>
+            <a class="downvote"></a>
+            <a class="star starred"></a>
         </div>
     </div>
     <div id="tests" style="overflow: auto">
