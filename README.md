@@ -33,6 +33,7 @@ count       : 0
 upvoted     : false
 downvoted   : false
 starred     : false
+id          : 123
 ```
 
 
@@ -91,7 +92,7 @@ var callback = function(data) {
     $.ajax({
         url: '/vote',
         type: 'post',
-        data: { up: data.upvoted, down: data.downvoted, star: data.starred }
+        data: { id: data.id, up: data.upvoted, down: data.downvoted, star: data.starred }
     });
 };
 $('#topic-123').upvote({id: 123, callback: callback});
