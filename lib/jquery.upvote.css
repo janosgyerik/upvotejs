@@ -60,6 +60,10 @@ div.upvote-meta-stackoverflow a {
     background-image: url('images/sprites-meta-stackoverflow.png?v=1');
 }
 
+div.upvote-superuser a {
+    background-image: url('images/sprites-superuser.png?v=1');
+}
+
 div.upvote-unix a {
     background-image: url('images/sprites-unix.png?v=1');
     width: 42px;
