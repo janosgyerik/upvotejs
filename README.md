@@ -39,11 +39,15 @@ callback    : function() {}
 
 If unspecified, most of these options will be set based on the passed in dom object:
 
-- `id`: from `data-id` *attribute*, for example in `<div data-id="123">...</div>`
-- `count`: from `count` *class*, for example in `<div><span class="count">7</span>...</div>`
-- `upvoted`: from `upvoted` *class*, for example in `<div>...<a class="upvoted"></a>...</div>`
-- `downvoted`: from `downvoted` *class*, for example in `<div>...<a class="downvoted"></a>...</div>`
-- `starred`: from `starred` *class*, for example in `<div>...<a class="starred"></a>...</div>`
+- `id`: from `data-id` *attribute*, for example in `<div data-id="123">...</div>`. If there is no such attribute in the dom, the value will be left undefined.
+- `count`: from `count` *class*, for example in `<div><span class="count">7</span>...</div>`. If there is no such class in the dom, the value will default to 0.
+- `upvoted`: from `upvoted` *class*, for example in `<div>...<a class="upvote upvoted"></a>...</div>`. If there is no such class in the dom, the value will default to `false`.
+- `downvoted`: from `downvoted` *class*, for example in `<div>...<a class="downvote downvoted"></a>...</div>`. If there is no such class in the dom, the value will default to `false`.
+- `starred`: from `starred` *class*, for example in `<div>...<a class="star starred"></a>...</div>`. If there is no such class in the dom, the value will default to `false`.
+
+The `id` parameter is not used for rendering.
+It's useful when you implement a callback method,
+in order to identify to your server backend the object that is voted on.
 
 
 Markup
