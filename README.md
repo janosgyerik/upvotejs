@@ -33,7 +33,6 @@ count       : 0
 upvoted     : false
 downvoted   : false
 starred     : false
-id          : 123
 ```
 
 
