@@ -26,14 +26,24 @@ Required files
 + lib/images/sprites-stackoverflow.png
 
 
-Options
--------
+Options and their default values
+--------------------------------
 ```js
+id          : undefined
 count       : 0
 upvoted     : false
 downvoted   : false
 starred     : false
+callback    : function() {}
 ```
+
+If unspecified, most of these options will be set based on the passed in dom object:
+
+- `id`: from `data-id` *attribute*, for example in `<div data-id="123">...</div>`
+- `count`: from `count` *class*, for example in `<div><span class="count">7</span>...</div>`
+- `upvoted`: from `upvoted` *class*, for example in `<div>...<a class="upvoted"></a>...</div>`
+- `downvoted`: from `downvoted` *class*, for example in `<div>...<a class="downvoted"></a>...</div>`
+- `starred`: from `starred` *class*, for example in `<div>...<a class="starred"></a>...</div>`
 
 
 Markup
