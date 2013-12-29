@@ -47,7 +47,7 @@ If unspecified, most of these options will be set based on the passed in dom obj
 
 The `id` parameter is not used for rendering.
 It's useful when you implement a callback method,
-in order to identify to your server backend the object that is voted on.
+so that you can identify to your server backend the object that is voted on.
 
 
 Markup
