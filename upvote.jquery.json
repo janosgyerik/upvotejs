@@ -9,7 +9,7 @@
         "stackoverflow",
         "stackexchange"
     ],
-    "version": "1.0.2",
+    "version": "1.1",
     "author": {
         "name": "Janos Gyerik",
         "url": "https://github.com/janosgyerik/jquery-upvote/"
@@ -24,6 +24,6 @@
     "homepage": "http://janosgyerik.github.io/jquery-upvote",
     "docs": "https://github.com/janosgyerik/jquery-upvote/blob/master/README.md",
     "dependencies": {
-        "jquery": ">=1.5"
+        "jquery": ">=2.0.2"
     }
 }
