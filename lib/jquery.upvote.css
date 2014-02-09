@@ -30,7 +30,7 @@ div.upvote a.upvote {
     background-position: 0px -265px;
 }
 
-div.upvote a.upvote.upvoted {
+div.upvote a.upvote.upvote-on {
     background-position: 0px -230px;
 }
 
@@ -38,7 +38,7 @@ div.upvote a.downvote {
     background-position: 0px -300px;
 }
 
-div.upvote a.downvote.downvoted {
+div.upvote a.downvote.downvote-on {
     background-position: 0px -330px;
 }
 
@@ -48,7 +48,7 @@ div.upvote a.star {
     background-position: 0px -150px;
 }
 
-div.upvote a.star.starred {
+div.upvote a.star.star-on {
     background-position: 0px -190px;
 }
 
@@ -74,7 +74,7 @@ div.upvote-unix a.upvote {
     background-position: 0px -237px;
 }
 
-div.upvote-unix a.upvote.upvoted {
+div.upvote-unix a.upvote.upvote-on {
     background-position: 0px -198px;
 }
 
@@ -82,7 +82,7 @@ div.upvote-unix a.downvote {
     background-position: 0px -281px;
 }
 
-div.upvote-unix a.downvote.downvoted {
+div.upvote-unix a.downvote.downvote-on {
     background-position: 0px -319px;
 }
 
@@ -92,7 +92,7 @@ div.upvote-unix a.star {
     background-position: 0px -126px;
 }
 
-div.upvote-unix a.star.starred {
+div.upvote-unix a.star.star-on {
     background-position: 0px -164px;
 }
 
@@ -118,7 +118,7 @@ div.upvote-programmers a.upvote {
     background-position: 5px -248px;
 }
 
-div.upvote-programmers a.upvote.upvoted {
+div.upvote-programmers a.upvote.upvote-on {
     background-position: 5px -211px;
 }
 
@@ -126,7 +126,7 @@ div.upvote-programmers a.downvote {
     background-position: 5px -282px;
 }
 
-div.upvote-programmers a.downvote.downvoted {
+div.upvote-programmers a.downvote.downvote-on {
     background-position: 5px -320px;
 }
 
@@ -136,7 +136,7 @@ div.upvote-programmers a.star {
     background-position: 6px -128px;
 }
 
-div.upvote-programmers a.star.starred {
+div.upvote-programmers a.star.star-on {
     background-position: 6px -166px;
 }
 

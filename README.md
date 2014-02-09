@@ -51,7 +51,7 @@ Basic example:
 Upvoted:
 ```html
 <div id="topic" class="upvote">
-    <a class="upvote upvoted"></a>
+    <a class="upvote upvote-on"></a>
     <span class="count">6</span>
     <a class="downvote"></a>
     <a class="star"></a>
@@ -63,7 +63,7 @@ Downvoted:
 <div id="topic" class="upvote">
     <a class="upvote"></a>
     <span class="count">4</span>
-    <a class="downvote downvoted"></a>
+    <a class="downvote downvote-on"></a>
     <a class="star"></a>
 </div>
 ```
@@ -74,7 +74,7 @@ Starred:
     <a class="upvote"></a>
     <span class="count">5</span>
     <a class="downvote"></a>
-    <a class="star starred"></a>
+    <a class="star star-on"></a>
 </div>
 ```
 
