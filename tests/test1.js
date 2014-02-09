@@ -95,13 +95,13 @@ test('downvote downvoted', function() {
 test('star non-starred', function() {
     var obj = gen();
     obj.upvote('star');
-    ok(obj.upvote('starred'));
+    ok(obj.upvote('starred'), 'should be starred');
 });
 
 test('star starred', function() {
     var obj = gen({starred: true});
     obj.upvote('star');
-    ok(!obj.upvote('starred'));
+    ok(!obj.upvote('starred'), 'should not be starred');
 });
 
 test('upvote indepently', function() {
@@ -130,8 +130,8 @@ test('star indepently', function() {
     var obj2 = gen({count: 5});
     var starred2 = obj2.upvote('starred');
     obj1.upvote('star');
-    ok(obj1.upvote('starred'));
-    ok(!obj2.upvote('starred'));
+    ok(obj1.upvote('starred'), 'first should be starred');
+    ok(!obj2.upvote('starred'), 'second should not be starred');
 });
 
 test('click upvote', function() {
@@ -157,35 +157,35 @@ test('click star', function() {
 test('preconfigured count=1 upvoted', function() {
     var obj = $('#count-1-upvoted').upvote();
     equal(obj.upvote('count'), 1);
-    ok(obj.upvote('upvoted'));
-    ok(!obj.upvote('downvoted'));
+    ok(obj.upvote('upvoted'), 'should be upvoted');
+    ok(!obj.upvote('downvoted'), 'should not be downvoted');
 });
 
 test('preconfigured count=2 downvoted', function() {
     var obj = $('#count-2-downvoted').upvote();
     equal(obj.upvote('count'), 2);
-    ok(obj.upvote('downvoted'));
-    ok(!obj.upvote('upvoted'));
+    ok(obj.upvote('downvoted'), 'should be downvoted');
+    ok(!obj.upvote('upvoted'), 'should not be upvoted');
 });
 
 test('preconfigured count=3 starred', function() {
     var obj = $('#count-3-starred').upvote();
     equal(obj.upvote('count'), 3);
-    ok(obj.upvote('starred'));
-    ok(!obj.upvote('upvoted'));
-    ok(!obj.upvote('downvoted'));
+    ok(obj.upvote('starred'), 'should be starred');
+    ok(!obj.upvote('upvoted'), 'should not be upvoted');
+    ok(!obj.upvote('downvoted'), 'should not be downvoted');
 });
 
 test('invalid configuration: upvoted + downvoted -> upvoted', function() {
     var obj = gen({upvoted: 1, downvoted: 1});
-    ok(obj.upvote('upvoted'));
-    ok(!obj.upvote('downvoted'));
+    ok(obj.upvote('upvoted'), 'shold be upvoted');
+    ok(!obj.upvote('downvoted'), 'should not be downvoted');
 });
 
 test('preconfigured invalid: upvoted + downvoted -> upvoted', function() {
     var obj = $('#upvoted-downvoted').upvote();
-    ok(obj.upvote('upvoted'));
-    ok(!obj.upvote('downvoted'));
+    ok(obj.upvote('upvoted'), 'should be upvoted');
+    ok(!obj.upvote('downvoted'), 'should not be downvoted');
 });
 
 test('callback', function() {
