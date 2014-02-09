@@ -26,14 +26,28 @@ Required files
 + lib/images/sprites-stackoverflow.png
 
 
-Options
--------
+Options and their default values
+--------------------------------
 ```js
+id          : undefined
 count       : 0
 upvoted     : false
 downvoted   : false
 starred     : false
+callback    : function() {}
 ```
+
+If unspecified, most of these options will be set based on the passed in dom object:
+
+- `id`: from `data-id` *attribute*, for example in `<div data-id="123">...</div>`. If there is no such attribute in the dom, the value will be left undefined.
+- `count`: from `count` *class*, for example in `<div><span class="count">7</span>...</div>`. If there is no such class in the dom, the value will default to 0.
+- `upvoted`: from `upvoted` *class*, for example in `<div>...<a class="upvote upvoted"></a>...</div>`. If there is no such class in the dom, the value will default to `false`.
+- `downvoted`: from `downvoted` *class*, for example in `<div>...<a class="downvote downvoted"></a>...</div>`. If there is no such class in the dom, the value will default to `false`.
+- `starred`: from `starred` *class*, for example in `<div>...<a class="star starred"></a>...</div>`. If there is no such class in the dom, the value will default to `false`.
+
+The `id` parameter is not used for rendering.
+It's useful when you implement a callback method,
+so that you can identify to your server backend the object that is voted on.
 
 
 Markup
@@ -91,7 +105,7 @@ var callback = function(data) {
     $.ajax({
         url: '/vote',
         type: 'post',
-        data: { up: data.upvoted, down: data.downvoted, star: data.starred }
+        data: { id: data.id, up: data.upvoted, down: data.downvoted, star: data.starred }
     });
 };
 $('#topic-123').upvote({id: 123, callback: callback});
