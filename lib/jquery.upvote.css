@@ -101,7 +101,7 @@ div.upvote-unix span.count {
     line-height: 15px;
     padding: 9px 0;
     font-family: "DejaVu Sans Mono","Bitstream Vera Sans Mono","Courier New",Courier,Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter",monospace;
-    text-shadow; 1px 1px 0 #ffffff;
+    text-shadow: 1px 1px 0 #ffffff;
     font-weight: bold;
     margin: 0;
     border: 0;
