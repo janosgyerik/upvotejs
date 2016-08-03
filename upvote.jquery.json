@@ -24,6 +24,6 @@
     "homepage": "http://janosgyerik.github.io/jquery-upvote",
     "docs": "https://github.com/janosgyerik/jquery-upvote/blob/master/README.md",
     "dependencies": {
-        "jquery": ">=2.0.2"
+        "jquery": ">=3.1.0"
     }
 }
