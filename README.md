@@ -1,15 +1,17 @@
 jQuery Upvote - a voting plugin
 ===============================
+
 jQuery Upvote is a plugin that generates a voting widget like
 the one used on Stack Exchange sites, for example:
 
-+ http://stackoverflow.com/
-+ http://serverfault.com/
-+ http://unix.stackexchange.com/
+- http://stackoverflow.com/
+- http://serverfault.com/
+- http://unix.stackexchange.com/
 
 
 Version
 -------
+
 ```
 @version         1.0.2
 @since           2013.06.19
@@ -21,13 +23,15 @@ Version
 
 Required files
 --------------
-+ lib/jquery.upvote.js
-+ lib/jquery.upvote.css
-+ lib/images/sprites-stackoverflow.png
+
+- lib/jquery.upvote.js
+- lib/jquery.upvote.css
+- lib/images/sprites-stackoverflow.png
 
 
 Options and their default values
 --------------------------------
+
 ```js
 id          : undefined
 count       : 0
@@ -52,7 +56,9 @@ so that you can identify to your server backend the object that is voted on.
 
 Markup
 ------
+
 Basic example:
+
 ```html
 <div id="topic" class="upvote">
     <a class="upvote"></a>
@@ -63,6 +69,7 @@ Basic example:
 ```
 
 Upvoted:
+
 ```html
 <div id="topic" class="upvote">
     <a class="upvote upvote-on"></a>
@@ -73,6 +80,7 @@ Upvoted:
 ```
 
 Downvoted:
+
 ```html
 <div id="topic" class="upvote">
     <a class="upvote"></a>
@@ -83,6 +91,7 @@ Downvoted:
 ```
 
 Starred:
+
 ```html
 <div id="topic" class="upvote">
     <a class="upvote"></a>
@@ -95,6 +104,7 @@ Starred:
 
 Initialization examples
 -----------------------
+
 ```js
 $('#topic').upvote();
 $('#topic').upvote({count: 5, upvoted: 1});
@@ -114,6 +124,7 @@ $('#topic-123').upvote({id: 123, callback: callback});
 
 Methods
 -------
+
 ```js
 // Create, pick up initial values from HTML markup
 $('#topic').upvote();
@@ -133,10 +144,12 @@ $('#topic').upvote('starred');      // Get the starred state -> boolean
 
 License
 -------
+
 Licensed under Creative Commons Attribution 3.0 Unported
 http://creativecommons.org/licenses/by/3.0/
 
 
 Donate
 ------
+
 You can do it via [PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=SQTLZB5QCLR82). Thanks! :)
