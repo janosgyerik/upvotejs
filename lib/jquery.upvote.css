@@ -1,150 +1,64 @@
 div.upvote {
-    text-align: center;
+  text-align: center;
 }
 
 div.upvote a.upvote-enabled {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 div.upvote a {
-    color: transparent;
-    background-image: url('images/sprites-stackoverflow.png?v=1');
-    background-repeat: no-repeat;
-    overflow: hidden;
-    display: block;
-    margin: 0 auto;
-    width: 41px;
-    height: 25px;
+  color: transparent;
+  background-image: url('images/sprites-stackoverflow.svg?v=1');
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 2px;
+  width: 40px;
+  height: 30px;
 }
 
 div.upvote span.count {
-    display: block;
-    font-size: 24px;
-    font-family: Arial, Liberation, Sans, DejaVu Sans, sans-serif;
-    color: #555;
-    text-align: center;
-    line-height: 1;
+  display: block;
+  text-align: center;
+  font-size: 20px;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  color: #6a737c;
+  margin: 8px 0;
 }
 
 div.upvote a.upvote {
-    background-position: 0px -265px;
+  background-position: 0px -170px;
 }
 
 div.upvote a.upvote.upvote-on {
-    background-position: 0px -230px;
+  background-position: -40px -170px;
 }
 
 div.upvote a.downvote {
-    background-position: 0px -300px;
+  background-position: 0px -220px;
 }
 
 div.upvote a.downvote.downvote-on {
-    background-position: 0px -330px;
+  background-position: -40px -220px;
 }
 
 div.upvote a.star {
-    width: 33px;
-    height: 31px;
-    background-position: 0px -150px;
+  background-position: 0px -120px;
 }
 
 div.upvote a.star.star-on {
-    background-position: 0px -190px;
+  background-position: -40px -120px;
 }
 
-div.upvote-serverfault a {
-    background-image: url('images/sprites-serverfault.png?v=1');
+div.upvote-unix a.upvote.upvote-on, div.upvote-unix a.downvote-on {
+  filter: invert(.5) sepia(1) hue-rotate(165.7518582deg)  saturate(3.8235864)  hue-rotate(-0.81675376deg)  brightness(.47739161);
 }
 
-div.upvote-meta-stackoverflow a {
-    background-image: url('images/sprites-meta-stackoverflow.png?v=1');
+div.upvote-serverfault a.upvote.upvote-on, div.upvote-serverfault a.downvote-on {
+  filter: invert(.5) sepia(1) hue-rotate(315.5792014deg) saturate(7.91709017) hue-rotate(346.04745219deg) brightness(.57640233);
 }
 
-div.upvote-superuser a {
-    background-image: url('images/sprites-superuser.png?v=1');
-}
-
-div.upvote-unix a {
-    background-image: url('images/sprites-unix.png?v=1');
-    width: 42px;
-    height: 27px;
-}
-
-div.upvote-unix a.upvote {
-    background-position: 0px -237px;
-}
-
-div.upvote-unix a.upvote.upvote-on {
-    background-position: 0px -198px;
-}
-
-div.upvote-unix a.downvote {
-    background-position: 0px -281px;
-}
-
-div.upvote-unix a.downvote.downvote-on {
-    background-position: 0px -319px;
-}
-
-div.upvote-unix a.star {
-    width: 42px;
-    height: 30px;
-    background-position: 0px -126px;
-}
-
-div.upvote-unix a.star.star-on {
-    background-position: 0px -164px;
-}
-
-div.upvote-unix span.count {
-    color: #333;
-    line-height: 15px;
-    padding: 9px 0;
-    font-family: "DejaVu Sans Mono","Bitstream Vera Sans Mono","Courier New",Courier,Consolas,"Andale Mono WT","Andale Mono","Lucida Console","Lucida Sans Typewriter",monospace;
-    text-shadow: 1px 1px 0 #ffffff;
-    font-weight: bold;
-    margin: 0;
-    border: 0;
-    vertical-align: baseline;
-}
-
-div.upvote-programmers a {
-    background-image: url('images/sprites-programmers.png?v=1');
-    width: 42px;
-    height: 20px;
-}
-
-div.upvote-programmers a.upvote {
-    background-position: 5px -248px;
-}
-
-div.upvote-programmers a.upvote.upvote-on {
-    background-position: 5px -211px;
-}
-
-div.upvote-programmers a.downvote {
-    background-position: 5px -282px;
-}
-
-div.upvote-programmers a.downvote.downvote-on {
-    background-position: 5px -320px;
-}
-
-div.upvote-programmers a.star {
-    width: 42px;
-    height: 30px;
-    background-position: 6px -128px;
-}
-
-div.upvote-programmers a.star.star-on {
-    background-position: 6px -166px;
-}
-
-div.upvote-programmers span.count {
-    color: #333;
-    line-height: 15px;
-    padding: 5px 0 7px;
-    font-size: 20px;
-    font-weight: bold;
-    font-family: Tahoma,Geneva,Arial,sans-serif;
+div.upvote-superuser a.upvote.upvote-on, div.upvote-superuser a.downvote-on {
+  filter: invert(.5) sepia(1) hue-rotate(159.50943396deg) saturate(2.94246645) hue-rotate(-4.96258652deg) brightness(.925639);
 }

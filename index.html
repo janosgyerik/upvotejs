@@ -47,13 +47,13 @@
                 function gen_unix(params) {
                     gen('#unix', 'upvote-unix', params);
                 }
-                function gen_programmers(params) {
-                    gen('#programmers', 'upvote-programmers', params);
+                function gen_superuser(params) {
+                    gen('#superuser', 'upvote-superuser', params);
                 }
                 function gen_serverfault(params) {
                     gen('#serverfault', 'upvote-serverfault', params);
                 }
-                var functions = [gen_examples, gen_unix, gen_programmers, gen_serverfault];
+                var functions = [gen_examples, gen_unix, gen_superuser, gen_serverfault];
                 for (var i in functions) {
                     var fun = functions[i];
                     fun();
@@ -87,8 +87,8 @@
 
         <div class="row">
             <div class="span6">
-                <h3>programmers.stackexchange.com</h3>
-                <div class="examples" id="programmers"></div>
+                <h3>superuser.com</h3>
+                <div class="examples" id="superuser"></div>
             </div>
             <div class="span6">
                 <h3>serverfault.com</h3>
