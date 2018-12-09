@@ -1,0 +1,224 @@
+<!doctype html>
+<head>
+    <meta charset="utf-8">
+
+    <title>UpvoteJS Test (vanilla)</title>
+
+    <script src="../lib/jquery-3.1.0.min.js"></script>
+    <script src="../dist/upvote/upvote.vanilla.js"></script>
+    <script src="../dist/upvote/upvote.jquery.js"></script>
+
+    <script src="qunit-2.8.0.js"></script>
+    <script src="create-vanilla.js"></script>
+    <script src="test1.js"></script>
+
+    <link rel="stylesheet" href="qunit-2.8.0.css">
+    <link rel="stylesheet" href="../dist/upvote/upvote.css">
+    <style type="text/css">
+    <!--
+      .hidden {
+          display: none;
+      }
+      div.upvote {
+          float: left;
+      }
+    -->
+    </style>
+</head>
+<body>
+    <h1 id="qunit-header">UpvoteJS Test</h1>
+    <h2 id="qunit-banner"></h2>
+    <h2 id="qunit-userAgent"></h2>
+    <div style="overflow: auto">
+        <div id="count-1" class="upvote">
+            <a class="upvote"></a>
+            <span class="count">1</span>
+            <a class="downvote"></a>
+            <a class="star"></a>
+        </div>
+        <div id="count-2-upvoted" class="upvote">
+            <a class="upvote upvote-on"></a>
+            <span class="count">2</span>
+            <a class="downvote"></a>
+            <a class="star"></a>
+        </div>
+        <div id="count-3-upvoted-starred" class="upvote">
+            <a class="upvote upvote-on"></a>
+            <span class="count">3</span>
+            <a class="downvote"></a>
+            <a class="star star-on"></a>
+        </div>
+        <div id="count-4-downvoted" class="upvote">
+            <a class="upvote"></a>
+            <span class="count">4</span>
+            <a class="downvote downvote-on"></a>
+            <a class="star"></a>
+        </div>
+        <div id="count-5-downvoted-starred" class="upvote">
+            <a class="upvote"></a>
+            <span class="count">5</span>
+            <a class="downvote downvote-on"></a>
+            <a class="star star-on"></a>
+        </div>
+        <div id="count-456789" class="upvote">
+            <a class="upvote"></a>
+            <span class="count">456789</span>
+            <a class="downvote"></a>
+            <a class="star"></a>
+        </div>
+        <div id="count-minus-456789" class="upvote">
+            <a class="upvote"></a>
+            <span class="count">-456789</span>
+            <a class="downvote"></a>
+            <a class="star"></a>
+        </div>
+        <div id="upvoted-downvoted" class="upvote">
+            <a class="upvote upvote-on"></a>
+            <span class="count">4</span>
+            <a class="downvote downvote-on"></a>
+            <a class="star"></a>
+        </div>
+
+        <div class="upvote upvote-unix">
+            <a class="upvote"></a>
+            <span class="count">1</span>
+            <a class="downvote"></a>
+            <a class="star"></a>
+        </div>
+        <div class="upvote upvote-unix">
+            <a class="upvote upvote-on"></a>
+            <span class="count">2</span>
+            <a class="downvote"></a>
+            <a class="star"></a>
+        </div>
+        <div class="upvote upvote-unix">
+            <a class="upvote upvote-on"></a>
+            <span class="count">3</span>
+            <a class="downvote"></a>
+            <a class="star star-on"></a>
+        </div>
+        <div class="upvote upvote-unix">
+            <a class="upvote"></a>
+            <span class="count">4</span>
+            <a class="downvote downvote-on"></a>
+            <a class="star"></a>
+        </div>
+        <div class="upvote upvote-unix">
+            <a class="upvote"></a>
+            <span class="count">5</span>
+            <a class="downvote downvote-on"></a>
+            <a class="star star-on"></a>
+        </div>
+        <div class="upvote upvote-unix">
+            <a class="upvote"></a>
+            <span class="count">456789</span>
+            <a class="downvote"></a>
+            <a class="star"></a>
+        </div>
+        <div class="upvote upvote-unix">
+            <a class="upvote"></a>
+            <span class="count">-456789</span>
+            <a class="downvote"></a>
+            <a class="star"></a>
+        </div>
+
+        <div class="upvote upvote-superuser">
+            <a class="upvote"></a>
+            <span class="count">1</span>
+            <a class="downvote"></a>
+            <a class="star"></a>
+        </div>
+        <div class="upvote upvote-superuser">
+            <a class="upvote upvote-on"></a>
+            <span class="count">2</span>
+            <a class="downvote"></a>
+            <a class="star"></a>
+        </div>
+        <div class="upvote upvote-superuser">
+            <a class="upvote upvote-on"></a>
+            <span class="count">3</span>
+            <a class="downvote"></a>
+            <a class="star star-on"></a>
+        </div>
+        <div class="upvote upvote-superuser">
+            <a class="upvote"></a>
+            <span class="count">4</span>
+            <a class="downvote downvote-on"></a>
+            <a class="star"></a>
+        </div>
+        <div class="upvote upvote-superuser">
+            <a class="upvote"></a>
+            <span class="count">5</span>
+            <a class="downvote downvote-on"></a>
+            <a class="star star-on"></a>
+        </div>
+        <div class="upvote upvote-superuser">
+            <a class="upvote"></a>
+            <span class="count">456789</span>
+            <a class="downvote"></a>
+            <a class="star"></a>
+        </div>
+        <div class="upvote upvote-superuser">
+            <a class="upvote"></a>
+            <span class="count">-456789</span>
+            <a class="downvote"></a>
+            <a class="star"></a>
+        </div>
+
+        <div class="upvote upvote-serverfault">
+            <a class="upvote"></a>
+            <span class="count">1</span>
+            <a class="downvote"></a>
+            <a class="star"></a>
+        </div>
+        <div class="upvote upvote-serverfault">
+            <a class="upvote upvote-on"></a>
+            <span class="count">2</span>
+            <a class="downvote"></a>
+            <a class="star"></a>
+        </div>
+        <div class="upvote upvote-serverfault">
+            <a class="upvote upvote-on"></a>
+            <span class="count">3</span>
+            <a class="downvote"></a>
+            <a class="star star-on"></a>
+        </div>
+        <div class="upvote upvote-serverfault">
+            <a class="upvote"></a>
+            <span class="count">4</span>
+            <a class="downvote downvote-on"></a>
+            <a class="star"></a>
+        </div>
+        <div class="upvote upvote-serverfault">
+            <a class="upvote"></a>
+            <span class="count">5</span>
+            <a class="downvote downvote-on"></a>
+            <a class="star star-on"></a>
+        </div>
+        <div class="upvote upvote-serverfault">
+            <a class="upvote"></a>
+            <span class="count">456789</span>
+            <a class="downvote"></a>
+            <a class="star"></a>
+        </div>
+        <div class="upvote upvote-serverfault">
+            <a class="upvote"></a>
+            <span class="count">-456789</span>
+            <a class="downvote"></a>
+            <a class="star"></a>
+        </div>
+    </div>
+    <div id="tests" style="overflow: auto">
+    </div>
+    <ol id="qunit-tests"></ol>
+    <div id="qunit-fixture"></div>
+    <div id="templates" class="hidden">
+        <div class="upvote">
+            <a class="upvote" title="This is good stuff. Vote it up! (Click again to undo)"></a>
+            <span class="count" title="Total number of votes"></span>
+            <a class="downvote" title="This is not useful. Vote it down. (Click again to undo)"></a>
+            <a class="star" title="Mark as favorite. (Click again to undo)"></a>
+        </div>
+    </div>
+</body>
+</html>

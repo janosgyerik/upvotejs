@@ -2,13 +2,10 @@ div.upvote {
   text-align: center;
 }
 
-div.upvote a.upvote-enabled {
-  cursor: pointer;
-}
-
 div.upvote a {
+  cursor: default;
   color: transparent;
-  background-image: url('images/sprites-stackoverflow.svg?v=1');
+  background-image: url('upvote.svg?v=1');
   background-repeat: no-repeat;
   overflow: hidden;
   display: block;
@@ -16,6 +13,10 @@ div.upvote a {
   margin-bottom: 2px;
   width: 40px;
   height: 30px;
+}
+
+div.upvote-enabled a {
+  cursor: pointer;
 }
 
 div.upvote span.count {
