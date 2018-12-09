@@ -36,3 +36,10 @@ Review and update CSS attributes as necessary, typically:
 - `margin`
 - `background-position`
 - `filter`
+
+Publishing the jQuery plugin
+----------------------------
+
+See https://plugins.jquery.com/docs/publish/
+
+Published at https://plugins.jquery.com/upvote/
