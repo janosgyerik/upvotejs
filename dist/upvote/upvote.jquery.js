@@ -91,7 +91,10 @@
 
   function destroy(jqdom) {
     return jqdom.each(function() {
-      $(window).unbind(dot_namespace);
+      const obj = jqdom.data(namespace);
+      if (obj) {
+        obj.destroy();
+      }
       $(this).removeClass(enabledClass);
       $(this).removeData(namespace);
     });

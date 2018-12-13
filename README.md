@@ -177,6 +177,8 @@ An exception will be thrown in case of invalid parameters:
 - If the parameter types don't match expected values
 - If `upvoted` and `downvoted` are both `true`
 
+### Properties
+
 An instance of an Upvote widget controller has the following properties:
 
 - `id`: the `id` of the controller
@@ -187,6 +189,12 @@ An instance of an Upvote widget controller has the following properties:
 - `downvoted()`: get the downvoted state
 - `star()`: toggle starred state
 - `starred()`: get the starred state
+
+### Event handling
+
+The widget controller, on its creation, overwrites the `onclick` property of the selected DOM.
+
+On `destroy`, the widget controller resets `onclick` to `null`.
 
 Sponsors
 --------

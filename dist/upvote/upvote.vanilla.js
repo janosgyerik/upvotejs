@@ -51,28 +51,34 @@ const Upvote = function() {
     },
     isBoolean: v => typeof v === "boolean",
     isFunction: v => typeof v === "function",
-    classes: dom => dom.className.split(/ +/).filter(x => x)
+    classes: dom => dom.className.split(/ +/).filter(x => x),
+    removeClass: (dom, className) => {
+      dom.className = dom.className.split(/ +/)
+        .filter(x => x)
+        .filter(c => c !== className)
+        .join(' ');
+    }
   };
 
   const Model = function() {
     const validate = params => {
       if (!Number.isInteger(params.count)) {
-        throw 'Fatal: parameter "count" must be a valid integer';
+        throw 'error: parameter "count" must be a valid integer';
       }
       if (!Utils.isBoolean(params.upvoted)) {
-        throw 'Fatal: parameter "upvoted" must be a boolean';
+        throw 'error: parameter "upvoted" must be a boolean';
       }
       if (!Utils.isBoolean(params.downvoted)) {
-        throw 'Fatal: parameter "downvoted" must be a boolean';
+        throw 'error: parameter "downvoted" must be a boolean';
       }
       if (!Utils.isBoolean(params.starred)) {
-        throw 'Fatal: parameter "starred" must be a boolean';
+        throw 'error: parameter "starred" must be a boolean';
       }
       if (params.callback && !Utils.isFunction(params.callback)) {
-        throw 'Fatal: parameter "callback" must be a function';
+        throw 'error: parameter "callback" must be a function';
       }
       if (params.upvoted && params.downvoted) {
-        throw 'Fatal: parameters "upvoted" and "downvoted" must not be true at the same time';
+        throw 'error: parameters "upvoted" and "downvoted" must not be true at the same time';
       }
     };
 
@@ -128,18 +134,18 @@ const Upvote = function() {
     const create = id => {
       const dom = document.getElementById(id);
       if (dom === null) {
-        throw 'Fatal: could not find element with ID ' + id + ' in the DOM';
+        throw 'error: could not find element with ID ' + id + ' in the DOM';
       }
 
       if (Utils.classes(dom).includes(enabledClass)) {
-        throw 'Fatal: element with ID ' + id + ' is already in use by another upvote controller';
+        throw 'error: element with ID ' + id + ' is already in use by another upvote controller';
       }
       dom.className += ' ' + enabledClass;
 
       const firstElementByClass = className => {
         const list = dom.getElementsByClassName(className);
         if (list === null) {
-          throw 'Fatal: could not find element with class ' + className + ' within element with ID ' + id + ' in the DOM';
+          throw 'error: could not find element with class ' + className + ' within element with ID ' + id + ' in the DOM';
         }
         return list[0];
       };
@@ -201,6 +207,13 @@ const Upvote = function() {
         };
       };
 
+      const destroy = () => {
+        Utils.removeClass(dom, enabledClass);
+        upvote.onClick(null);
+        downvote.onClick(null);
+        star.onClick(null);
+      };
+
       const counter = createCounter(countClass);
       const upvote = createToggle(upvoteClass, upvoteOnClass);
       const downvote = createToggle(downvoteClass, downvoteOnClass);
@@ -211,7 +224,8 @@ const Upvote = function() {
         parseParamsFromDom: parseParamsFromDom,
         onClickUpvote: fun => upvote.onClick(fun),
         onClickDownvote: fun => downvote.onClick(fun),
-        onClickStar: fun => star.onClick(fun)
+        onClickStar: fun => star.onClick(fun),
+        destroy: destroy
       };
     };
 
@@ -221,6 +235,7 @@ const Upvote = function() {
   }();
 
   const create = (id, params = {}) => {
+    var destroyed = false;
     const view = View.create(id);
     const domParams = view.parseParamsFromDom();
     const defaults = {
@@ -235,22 +250,37 @@ const Upvote = function() {
     const model = Model.create(combinedParams);
     const callback = combinedParams.callback;
 
+    const throwIfDestroyed = () => {
+      if (destroyed) {
+        throw "fatal: unexpected call to destroyed controller";
+      }
+    };
+
     const upvote = () => {
+      throwIfDestroyed();
       model.upvote();
       view.render(model);
       callback(model.data());
     };
 
     const downvote = () => {
+      throwIfDestroyed();
       model.downvote();
       view.render(model);
       callback(model.data());
     };
 
     const star = () => {
+      throwIfDestroyed();
       model.star();
       view.render(model);
       callback(model.data());
+    };
+
+    const destroy = () => {
+      throwIfDestroyed();
+      destroyed = true;
+      view.destroy();
     };
 
     view.render(model);
@@ -260,13 +290,26 @@ const Upvote = function() {
 
     return {
       id: id,
-      count: model.count,
+      count: () => {
+        throwIfDestroyed();
+        return model.count();
+      },
       upvote: upvote,
-      upvoted: model.upvoted,
+      upvoted: () => {
+        throwIfDestroyed();
+        return model.upvoted();
+      },
       downvote: downvote,
-      downvoted: model.downvoted,
+      downvoted: () => {
+        throwIfDestroyed();
+        return model.downvoted();
+      },
       star: star,
-      starred: model.starred
+      starred: () => {
+        throwIfDestroyed();
+        return model.starred();
+      },
+      destroy: destroy
     };
   };
 

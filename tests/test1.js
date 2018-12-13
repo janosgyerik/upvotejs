@@ -267,3 +267,29 @@ QUnit.test('cannot associate multiple models to the same id', assert => {
   const orig = gen();
   assert.throws(() => gen({id: orig.id}));
 });
+
+QUnit.test('widget stops responding to clicks after destroyed', assert => {
+  const obj = gen({count: 99});
+  const ui = uiTester(obj);
+
+  ui.upvote();
+  assert.equal(ui.count(), 100);
+  ui.upvote();
+  assert.equal(ui.count(), 99);
+
+  obj.destroy();
+  ui.upvote();
+  assert.equal(ui.count(), 99);
+  assert.throws(() => obj.upvote());
+  assert.throws(() => obj.downvote());
+  assert.throws(() => obj.star());
+  assert.throws(() => obj.count());
+  assert.throws(() => obj.upvoted());
+  assert.throws(() => obj.downvoted());
+  assert.throws(() => obj.starred());
+
+  const reused = gen({id: obj.id});
+  assert.equal(reused.count(), 99);
+  ui.upvote();
+  assert.equal(reused.count(), 100);
+});

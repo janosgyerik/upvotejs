@@ -8,6 +8,7 @@ const create = (id, params, jqdom) => {
     downvote: () => jq.upvote('downvote'),
     downvoted: () => jq.upvote('downvoted'),
     star: () => jq.upvote('star'),
-    starred: () => jq.upvote('starred')
+    starred: () => jq.upvote('starred'),
+    destroy: () => jq.upvote('destroy')
   };
 };
