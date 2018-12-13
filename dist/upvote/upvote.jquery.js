@@ -31,19 +31,28 @@
 ;(function($) {
   "use strict";
   const namespace = 'upvote';
-  const dot_namespace = '.' + namespace;
   const enabledClass = 'upvote-enabled';
 
   function init(dom, options) {
-    return dom.each(function(i) {
+    var total = 0;
+    var failed = 0;
+    var ret = dom.each(function() {
       const jqdom = $(this);
       methods.destroy(jqdom);
 
-      const id = dom.attr('id');
-      const obj = Upvote.create(id, options);
-
-      jqdom.data(namespace, obj);
+      const id = jqdom.attr('id');
+      try {
+        total++;
+        const obj = Upvote.create(id, options);
+        jqdom.data(namespace, obj);
+      } catch {
+        failed++;
+      }
     });
+    if (failed > 0) {
+      throw 'error: failed to create ' + failed + '/' + total + ' controllers';
+    }
+    return ret;
   }
 
   function upvote(jqdom) {
