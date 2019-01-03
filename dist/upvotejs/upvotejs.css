@@ -5,7 +5,7 @@ div.upvote {
 div.upvote a {
   cursor: default;
   color: transparent;
-  background-image: url('upvote.svg?v=1');
+  background-image: url('upvotejs.svg?v=1');
   background-repeat: no-repeat;
   overflow: hidden;
   display: block;

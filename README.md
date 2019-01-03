@@ -16,9 +16,9 @@ There are different ways to use the package, depending on your use case.
 
 Include the stylesheet in your page's `<head>` element, for example:
 
-    <link rel="stylesheet" href="dist/upvotejs/upvote.css">
+    <link rel="stylesheet" href="dist/upvotejs/upvotejs.css">
 
-Make sure the image `upvote.svg` is present in the same directory as the `upvote.css` file.
+Make sure the image `upvotejs.svg` is present in the same directory as the `upvotejs.css` file.
 
 Include this basic HTML boilerplate for each vote:
 
@@ -42,7 +42,7 @@ With only HTML code, the widget is read-only, the voting and star buttons are no
 
 Include the JavaScript sources in your page's `<head>` element, for example:
 
-    <script src="dist/upvotejs/upvote.vanilla.js"></script>
+    <script src="dist/upvotejs/upvotejs.vanilla.js"></script>
 
 Create the Upvote widget controller:
 
@@ -91,11 +91,11 @@ It's possible to use the package through jQuery, if you prefer (though not clear
 
 Include the following in `<head>`:
 
-    <link rel="stylesheet" href="dist/upvotejs/upvote.css">
-    <script src="dist/upvotejs/upvote.vanilla.js"></script>
-    <script src="dist/upvotejs/upvote.jquery.js"></script>
+    <link rel="stylesheet" href="dist/upvotejs/upvotejs.css">
+    <script src="dist/upvotejs/upvotejs.vanilla.js"></script>
+    <script src="dist/upvotejs/upvotejs.jquery.js"></script>
 
-Make sure the image `upvote.svg` is present in the same directory as the `upvote.css` file.
+Make sure the image `upvotejs.svg` is present in the same directory as the `upvotejs.css` file.
 
 Initialization examples:
 
@@ -134,8 +134,8 @@ API reference
 
 Files:
 
-- `upvote.css` and `upvote.svg` are required for styling, and both must be in the same directory
-- `upvote.vanilla.js` is required for interactive use
+- `upvotejs.css` and `upvotejs.svg` are required for styling, and both must be in the same directory
+- `upvotejs.vanilla.js` is required for interactive use
 
 Create an Upvote widget controller using `Upvote.create`:
 
