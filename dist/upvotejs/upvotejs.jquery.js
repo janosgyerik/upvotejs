@@ -16,7 +16,7 @@
  *
  * ------------------------------------------------------------------
  *
- *  <div id="topic" class="upvote">
+ *  <div id="topic" class="upvotejs">
  *    <a class="upvote"></a>
  *    <span class="count"></span>
  *    <a class="downvote"></a>
@@ -30,8 +30,8 @@
 
 ;(function($) {
   "use strict";
-  const namespace = 'upvote';
-  const enabledClass = 'upvote-enabled';
+  const namespace = 'upvotejs';
+  const enabledClass = 'upvotejs-enabled';
 
   function init(dom, options) {
     var total = 0;

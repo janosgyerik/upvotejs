@@ -1,8 +1,8 @@
 /*
- * Upvote - a Stack Exchange look-alike voting widget
- * --------------------------------------------------
+ * UpvoteJS - a Stack Exchange look-alike voting widget
+ * ----------------------------------------------------
  *
- * Upvote is a widget that generates a voting widget like
+ * UpvoteJS is a widget that generates a voting widget like
  * the one used on Stack Exchange sites.
  *
  * Licensed under Creative Commons Attribution 3.0 Unported
@@ -16,7 +16,7 @@
  *
  * ------------------------------------------------------------------
  *
- *  <div id="topic" class="upvote">
+ *  <div id="topic" class="upvotejs">
  *    <a class="upvote"></a>
  *    <span class="count"></span>
  *    <a class="downvote"></a>
@@ -30,7 +30,7 @@
 
 const Upvote = function() {
   const upvoteClass = 'upvote';
-  const enabledClass = 'upvote-enabled';
+  const enabledClass = 'upvotejs-enabled';
   const upvoteOnClass = 'upvote-on';
   const downvoteClass = 'downvote';
   const downvoteOnClass = 'downvote-on';

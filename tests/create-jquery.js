@@ -16,20 +16,20 @@ const create = (id, params, jqdom) => {
 QUnit.test('create multiple objects from DOM selector', assert => {
   for (let i = 0; i < 5; i++) {
     const id = 'jq-' + i;
-    const jqdom = $('#templates div.upvote').clone();
+    const jqdom = $('#templates div.upvotejs').clone();
     jqdom.attr('id', id);
     jqdom.addClass('custom');
     $('#tests').append(jqdom);
   }
   assert.equal($('.custom').length, 5);
-  assert.equal($('.custom.upvote-enabled').length, 0);
+  assert.equal($('.custom.upvotejs-enabled').length, 0);
   $('.custom').upvote();
-  assert.equal($('.custom.upvote-enabled').length, 5);
+  assert.equal($('.custom.upvotejs-enabled').length, 5);
 
   $('.custom').upvote('destroy');
-  assert.equal($('.custom.upvote-enabled').length, 0);
+  assert.equal($('.custom.upvotejs-enabled').length, 0);
 
   $('.custom').eq(0).attr('id', null);
   assert.throws(() => $('.custom').upvote());
-  assert.equal($('.custom.upvote-enabled').length, 4);
+  assert.equal($('.custom.upvotejs-enabled').length, 4);
 });

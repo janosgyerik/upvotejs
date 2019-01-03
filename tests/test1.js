@@ -5,7 +5,7 @@ const gen = function() {
   return (params = {}) => {
     ++idcount;
     const id = params.id || ('u' + idcount);
-    const jqdom = $('#templates div.upvote').clone();
+    const jqdom = $('#templates div.upvotejs').clone();
     jqdom.attr('id', id);
     $('#tests').append(jqdom);
     params.callback = params.callback || (data => {});

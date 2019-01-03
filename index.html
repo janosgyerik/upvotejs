@@ -19,7 +19,7 @@
   .examples {
     overflow: auto;
   }
-  .examples div.upvote {
+  .examples div.upvotejs {
     float: left;
   }
   #footer {
@@ -67,7 +67,7 @@
                 <h3>Basic</h3>
                 <div class="row">
                     <div class="span1">
-                        <div class="upvote">
+                        <div class="upvotejs">
                             <a class="upvote"></a>
                             <span class="count">5</span>
                             <a class="downvote"></a>
@@ -76,7 +76,7 @@
                     </div>
                     <div class="span5">
                         <pre>
-&lt;div id="basic" class="upvote"&gt;
+&lt;div id="basic" class="upvotejs"&gt;
     &lt;a class="upvote"&gt;&lt;/a&gt;
     &lt;span class="count"&gt;5&lt;/span&gt;
     &lt;a class="downvote"&gt;&lt;/a&gt;
@@ -101,7 +101,7 @@ Upvote.create('basic', {count: 5});</pre>
                 <h3>Upvoted</h3>
                 <div class="row">
                     <div class="span1">
-                        <div class="upvote">
+                        <div class="upvotejs">
                             <a class="upvote upvote-on"></a>
                             <span class="count">6</span>
                             <a class="downvote"></a>
@@ -110,7 +110,7 @@ Upvote.create('basic', {count: 5});</pre>
                     </div>
                     <div class="span5">
                         <pre>
-&lt;div id="upvoted" class="upvote"&gt;
+&lt;div id="upvoted" class="upvotejs"&gt;
     &lt;a class="upvote upvote-on"&gt;&lt;/a&gt;
     &lt;span class="count"&gt;6&lt;/span&gt;
     &lt;a class="downvote"&gt;&lt;/a&gt;
@@ -137,7 +137,7 @@ Upvote.create('upvoted', {count: 6, upvoted: true});</pre>
                 <h3>Downvoted</h3>
                 <div class="row">
                     <div class="span1">
-                        <div class="upvote">
+                        <div class="upvotejs">
                             <a class="upvote"></a>
                             <span class="count">4</span>
                             <a class="downvote downvote-on"></a>
@@ -146,7 +146,7 @@ Upvote.create('upvoted', {count: 6, upvoted: true});</pre>
                     </div>
                     <div class="span5">
                         <pre>
-&lt;div id="downvoted" class="upvote"&gt;
+&lt;div id="downvoted" class="upvotejs"&gt;
     &lt;a class="upvote"&gt;&lt;/a&gt;
     &lt;span class="count"&gt;4&lt;/span&gt;
     &lt;a class="downvote downvote-on"&gt;&lt;/a&gt;
@@ -171,7 +171,7 @@ Upvote.create('downvoted', {count: 4, downvoted: true});</pre>
                 <h3>Upvoted and starred</h3>
                 <div class="row">
                     <div class="span1">
-                        <div class="upvote">
+                        <div class="upvotejs">
                             <a class="upvote upvote-on"></a>
                             <span class="count">6</span>
                             <a class="downvote"></a>
@@ -180,7 +180,7 @@ Upvote.create('downvoted', {count: 4, downvoted: true});</pre>
                     </div>
                     <div class="span5">
                         <pre>
-&lt;div id="upvoted-and-starred" class="upvote"&gt;
+&lt;div id="upvoted-and-starred" class="upvotejs"&gt;
     &lt;a class="upvote upvote-on"&gt;&lt;/a&gt;
     &lt;span class="count"&gt;6&lt;/span&gt;
     &lt;a class="downvote"&gt;&lt;/a&gt;
@@ -207,7 +207,7 @@ Upvote.create('upvoted-and-starred', {count: 6, upvoted: true, starred: true});<
                 <h3>unix.stackexchange.com style</h3>
                 <div class="row">
                     <div class="span1">
-                        <div class="upvote upvote-unix">
+                        <div class="upvotejs upvotejs-unix">
                             <a class="upvote"></a>
                             <span class="count">4</span>
                             <a class="downvote downvote-on"></a>
@@ -216,7 +216,7 @@ Upvote.create('upvoted-and-starred', {count: 6, upvoted: true, starred: true});<
                     </div>
                     <div class="span5">
                         <pre>
-&lt;div id="unix" class="upvote upvote-unix"&gt;
+&lt;div id="unix" class="upvotejs upvotejs-unix"&gt;
     &lt;a class="upvote"&gt;&lt;/a&gt;
     &lt;span class="count"&gt;4&lt;/span&gt;
     &lt;a class="downvote downvote-on"&gt;&lt;/a&gt;
@@ -241,7 +241,7 @@ Upvote.create('unix', {count: 4, downvoted: true, skin: 'unix'});</pre>
                 <h3>serverfault.com style</h3>
                 <div class="row">
                     <div class="span1">
-                        <div class="upvote upvote-serverfault">
+                        <div class="upvotejs upvotejs-serverfault">
                             <a class="upvote upvote-on"></a>
                             <span class="count">6</span>
                             <a class="downvote"></a>
@@ -250,7 +250,7 @@ Upvote.create('unix', {count: 4, downvoted: true, skin: 'unix'});</pre>
                     </div>
                     <div class="span5">
                         <pre>
-&lt;div id="serverfault" class="upvote upvote-serverfault"&gt;
+&lt;div id="serverfault" class="upvotejs upvotejs-serverfault"&gt;
     &lt;a class="upvote upvote-on"&gt;&lt;/a&gt;
     &lt;span class="count"&gt;6&lt;/span&gt;
     &lt;a class="downvote"&gt;&lt;/a&gt;
@@ -285,7 +285,7 @@ Upvote.create('serverfault', {count: 6, upvoted: true, starred: true, skin: 'ser
         </div>
     </div>
     <div id="templates" class="hidden">
-        <div class="upvote">
+        <div class="upvotejs">
             <a class="upvote" title="This is good stuff. Vote it up! (Click again to undo)"></a>
             <span class="count" title="Total number of votes"></span>
             <a class="downvote" title="This is not useful. Vote it down. (Click again to undo)"></a>
@@ -294,7 +294,7 @@ Upvote.create('serverfault', {count: 6, upvoted: true, starred: true, skin: 'ser
     </div>
     <script type="text/javascript">
       (function() {
-        const proto = document.getElementById('templates').getElementsByClassName('upvote')[0];
+        const proto = document.getElementById('templates').getElementsByClassName('upvotejs')[0];
         const gen = function() {
           var idcount = 0;
           return (target, cssClass, params) => {
@@ -308,9 +308,9 @@ Upvote.create('serverfault', {count: 6, upvoted: true, starred: true, skin: 'ser
 
         [
           params => gen('#examples', '', params),
-          params => gen('#unix', 'upvote-unix', params),
-          params => gen('#superuser', 'upvote-superuser', params),
-          params => gen('#serverfault', 'upvote-serverfault', params)
+          params => gen('#unix', 'upvotejs-unix', params),
+          params => gen('#superuser', 'upvotejs-superuser', params),
+          params => gen('#serverfault', 'upvotejs-serverfault', params)
         ].forEach(fun => {
           fun({count: 1, downvoted: true});
           fun({count: 2});

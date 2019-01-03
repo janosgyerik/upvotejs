@@ -22,7 +22,7 @@ Make sure the image `upvotejs.svg` is present in the same directory as the `upvo
 
 Include this basic HTML boilerplate for each vote:
 
-    <div id="the-id" class="upvote">
+    <div id="the-id" class="upvotejs">
         <a class="upvote"></a>
         <span class="count">0</span>
         <a class="downvote"></a>
@@ -143,7 +143,7 @@ Create an Upvote widget controller using `Upvote.create`:
 
 An element in the DOM must exist with the specified `id`, and have a basic markup like this:
 
-    <div id="the-id" class="upvote">
+    <div id="the-id" class="upvotejs">
         <a class="upvote"></a>
         <span class="count">0</span>
         <a class="downvote"></a>

@@ -1,8 +1,8 @@
-div.upvote {
+div.upvotejs {
   text-align: center;
 }
 
-div.upvote a {
+div.upvotejs a {
   cursor: default;
   color: transparent;
   background-image: url('upvotejs.svg?v=1');
@@ -15,11 +15,11 @@ div.upvote a {
   height: 30px;
 }
 
-div.upvote-enabled a {
+div.upvotejs-enabled a {
   cursor: pointer;
 }
 
-div.upvote span.count {
+div.upvotejs span.count {
   display: block;
   text-align: center;
   font-size: 20px;
@@ -28,38 +28,38 @@ div.upvote span.count {
   margin: 8px 0;
 }
 
-div.upvote a.upvote {
+div.upvotejs a.upvote {
   background-position: 0px -170px;
 }
 
-div.upvote a.upvote.upvote-on {
+div.upvotejs a.upvote.upvote-on {
   background-position: -40px -170px;
 }
 
-div.upvote a.downvote {
+div.upvotejs a.downvote {
   background-position: 0px -220px;
 }
 
-div.upvote a.downvote.downvote-on {
+div.upvotejs a.downvote.downvote-on {
   background-position: -40px -220px;
 }
 
-div.upvote a.star {
+div.upvotejs a.star {
   background-position: 0px -120px;
 }
 
-div.upvote a.star.star-on {
+div.upvotejs a.star.star-on {
   background-position: -40px -120px;
 }
 
-div.upvote-unix a.upvote.upvote-on, div.upvote-unix a.downvote-on {
+div.upvotejs-unix a.upvote.upvote-on, div.upvotejs-unix a.downvote-on {
   filter: invert(.5) sepia(1) hue-rotate(165.7518582deg)  saturate(3.8235864)  hue-rotate(-0.81675376deg)  brightness(.47739161);
 }
 
-div.upvote-serverfault a.upvote.upvote-on, div.upvote-serverfault a.downvote-on {
+div.upvotejs-serverfault a.upvote.upvote-on, div.upvotejs-serverfault a.downvote-on {
   filter: invert(.5) sepia(1) hue-rotate(315.5792014deg) saturate(7.91709017) hue-rotate(346.04745219deg) brightness(.57640233);
 }
 
-div.upvote-superuser a.upvote.upvote-on, div.upvote-superuser a.downvote-on {
+div.upvotejs-superuser a.upvote.upvote-on, div.upvotejs-superuser a.downvote-on {
   filter: invert(.5) sepia(1) hue-rotate(159.50943396deg) saturate(2.94246645) hue-rotate(-4.96258652deg) brightness(.925639);
 }
