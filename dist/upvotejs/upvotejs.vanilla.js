@@ -57,7 +57,8 @@ const Upvote = function() {
         .filter(x => x)
         .filter(c => c !== className)
         .join(' ');
-    }
+    },
+    noop: () => {}
   };
 
   const Model = function() {
@@ -153,6 +154,13 @@ const Upvote = function() {
       const createCounter = className => {
         const dom = firstElementByClass(className);
 
+        if (dom === undefined) {
+          return {
+            count: () => undefined,
+            set: Utils.noop
+          };
+        }
+
         return {
           count: () => parseInt(dom.innerHTML || 0, 10),
           set: value => dom.innerHTML = value
@@ -179,6 +187,14 @@ const Upvote = function() {
         };
 
         const item = firstElementByClass(className);
+        if (item === undefined) {
+          return {
+            get: () => false,
+            set: Utils.noop,
+            onClick: Utils.noop
+          };
+        }
+
         const classes = createClasses();
 
         return {

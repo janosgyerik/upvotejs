@@ -293,3 +293,29 @@ QUnit.test('widget stops responding to clicks after destroyed', assert => {
   ui.upvote();
   assert.equal(reused.count(), 100);
 });
+
+QUnit.test('all sub-elements (upvote/downvote/count/star) are optional in the HTML markup', assert => {
+  ['upvote', 'downvote', 'count', 'star'].forEach(cls => {
+    const obj0 = gen();
+    obj0.destroy();
+    const jqdom = $('#' + obj0.id);
+    jqdom.find('.' + cls).remove();
+    const obj = create(obj0.id, {}, jqdom);
+
+    assert.equal(obj.count(), 0);
+    obj.upvote();
+    assert.equal(obj.count(), 1);
+    assert.equal(obj.upvoted(), true);
+    obj.downvote();
+    assert.equal(obj.count(), -1);
+    assert.equal(obj.downvoted(), true);
+    assert.equal(obj.upvoted(), false);
+    obj.downvote();
+    assert.equal(obj.count(), 0);
+    assert.equal(obj.downvoted(), false);
+    obj.star();
+    assert.equal(obj.starred(), true);
+    obj.star();
+    assert.equal(obj.starred(), false);
+  });
+});
