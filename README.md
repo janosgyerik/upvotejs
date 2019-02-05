@@ -12,7 +12,12 @@ Using the package
 
 There are different ways to use the package, depending on your use case.
 
-### Creating a read-only widget in HTML
+### Create a "read-only" widget in HTML
+
+That is, have a nicely rendered widget based on HTML markup alone,
+to simply represent some state, that cannot be modified by user action.
+In this mode, no JavaScript is needed, and the counter, the upvote/downvote arrows
+and the star are rendered based on the HTML markup alone.
 
 Include the stylesheet in your page's `<head>` element, for example:
 
@@ -38,7 +43,11 @@ Customize the boilerplate with values appropriate for the vote you want to displ
 
 With only HTML code, the widget is read-only, the voting and star buttons are not clickable.
 
-### Making the widget interactive
+### Create an interactive widget
+
+That is, enable user interactions to upvote, downvote, or star,
+modifying the state of the counter.
+However, storing the state on some backend is still out of scope in this mode.
 
 Include the JavaScript sources in your page's `<head>` element, for example:
 
@@ -54,10 +63,10 @@ With this step, the controls of the widget will become clickable, upvoting and d
 
 With HTML and JavaScript code alone, the state of the widget will not be persisted in any storage.
 
-### Making the widget persist state
+### Save the state of the widget to some backend
 
 In order to save the state of the widget in response to user action,
-you can pass a callback handler when creating the widget, for example:
+pass a callback handler when creating the widget, for example:
 
     Upvote.create('id', {callback: your_callback_handler});
 
@@ -83,7 +92,7 @@ An example data object:
       starred: true
     }
 
-Using this data object, it is up to your implementation of `your_callback_handler` to do something interesting, for example making a `POST` or `PATCH` call to a storage service to update the user's vote.
+Using this data object, it is up to your implementation of `your_callback_handler` to actually implement writing the new state on some backend, for example with a `POST` or `PATCH` call to a storage service to update the user's vote.
 
 ### Using with jQuery
 
