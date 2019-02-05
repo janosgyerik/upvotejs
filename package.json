@@ -1,0 +1,37 @@
+{
+  "name": "upvotejs",
+  "title": "UpvoteJS",
+  "version": "2.0.0",
+  "description": "Generate a voting widget like the one used on Stack Exchange sites.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/janosgyerik/upvotejs"
+  },
+  "keywords": [
+    "upvote"
+  ],
+  "main": "./dist/upvotejs/upvotejs.vanilla.js",
+  "style": "./dist/upvotejs/upvotejs.css",
+  "files": [
+    "./dist/upvotejs/upvotejs.svg"
+  ],
+  "homepage": "https://janosgyerik.github.io/upvotejs",
+  "author": {
+    "name": "Janos Gyerik",
+    "url": "https://twitter.com/janosgyerik"
+  },
+  "contributors": [
+    {
+      "name": "HappyZombies",
+      "url": "https://github.com/HappyZombies"
+    },
+    {
+      "name": "Tomas Liubinas",
+      "url": "https://github.com/tomasliubinas"
+    },
+    {
+      "name": "dilip-vishwa",
+      "url": "https://github.com/dilip-vishwa"
+    }
+  ]
+}
