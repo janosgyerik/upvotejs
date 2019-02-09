@@ -8,10 +8,10 @@
  * Licensed under Creative Commons Attribution 3.0 Unported
  * http://creativecommons.org/licenses/by/3.0/
  *
- * @version         1.0.0
+ * @version         2.0.0
  * @since           2018.12.05
  * @author          Janos Gyerik
- * @homepage        https://janosgyerik.github.io/upvote
+ * @homepage        https://janosgyerik.github.io/upvotejs
  * @twitter         twitter.com/janosgyerik
  *
  * ------------------------------------------------------------------
