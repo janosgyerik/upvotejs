@@ -71,25 +71,33 @@ pass a callback handler when creating the widget, for example:
     Upvote.create('id', {callback: your_callback_handler});
 
 On any change to the state of the widget (vote up, vote down, or star),
-the callback handler will be called, with a data object as parameter,
+the callback handler will be called, with a JSON object as parameter,
 with fields:
 
-- `id` - the id of the DOM object, the same value that was used when creating with `Upvote.create`
-- `count` - the current vote count
-- `upvoted` - `true` if the widget is in upvoted state
-- `downvoted` - `true` if the widget is in downvoted state
-- `starred` - `true` if the widget is in starred state
+- `id`: the id of the DOM object, the same value that was used when creating with `Upvote.create`
+
+- `action`: the user action that triggered the state change.
+  Possible values: `upvote`, `unupvote`, `downvote`, `undownvote`, `star`, `unstar`
+
+- `newState`: a JSON object with fields:
+  - `count`: the current vote count
+  - `upvoted`: `true` if the widget is in upvoted state
+  - `downvoted`: `true` if the widget is in downvoted state
+  - `starred`: `true` if the widget is in starred state
 
 Note that `upvoted` and `downvoted` will never be `true` at the same time.
 
-An example data object:
+An example payload:
 
     {
       id: 'my-vote',
-      count: 123,
-      upvoted: true,
-      downvoted: false,
-      starred: true
+      action: 'upvote',
+      newState: {
+        count: 123,
+        upvoted: true,
+        downvoted: false,
+        starred: true
+      }
     }
 
 Using this data object, it is up to your implementation of `your_callback_handler` to actually implement writing the new state on some backend, for example with a `POST` or `PATCH` call to a storage service to update the user's vote.

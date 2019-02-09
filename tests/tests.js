@@ -199,20 +199,100 @@ QUnit.test('star indepently', assert => {
 });
 
 QUnit.test('call callback on value changes', assert => {
-  var called_id = 0;
-  const callback = data => {
-    called_id = data.id;
-  };
-  const obj1 = gen({count: 10, id: 177, callback: callback});
-  const obj2 = gen({count: 20, id: 178, callback: callback});
+  var receivedPayload;
+  const callback = payload => receivedPayload = payload;
+
+  const obj1_id = 100;
+  const obj1_origCount = 10;
+  const obj1 = gen({id: obj1_id, count: obj1_origCount, callback: callback});
+
+  const obj2_id = 200;
+  const obj2_origCount = 20;
+  const obj2 = gen({id: obj2_id, count: obj2_origCount, callback: callback});
+
   obj1.upvote();
-  assert.equal(called_id, 177);
+  assert.deepEqual(receivedPayload, {
+    id: obj1_id,
+    action: 'upvote',
+    newState: {
+      count: obj1_origCount + 1,
+      downvoted: false,
+      upvoted: true,
+      starred: false
+    }
+  });
+
   obj2.upvote();
-  assert.equal(called_id, 178);
+  assert.deepEqual(receivedPayload, {
+    id: obj2_id,
+    action: 'upvote',
+    newState: {
+      count: obj2_origCount + 1,
+      downvoted: false,
+      upvoted: true,
+      starred: false
+    }
+  });
+
   obj1.upvote();
-  assert.equal(called_id, 177);
+  assert.deepEqual(receivedPayload, {
+    id: obj1_id,
+    action: 'unupvote',
+    newState: {
+      count: obj1_origCount,
+      downvoted: false,
+      upvoted: false,
+      starred: false
+    }
+  });
+
   obj2.star();
-  assert.equal(called_id, 178);
+  assert.deepEqual(receivedPayload, {
+    id: obj2_id,
+    action: 'star',
+    newState: {
+      count: obj2_origCount + 1,
+      downvoted: false,
+      upvoted: true,
+      starred: true
+    }
+  });
+
+  obj2.star();
+  assert.deepEqual(receivedPayload, {
+    id: obj2_id,
+    action: 'unstar',
+    newState: {
+      count: obj2_origCount + 1,
+      downvoted: false,
+      upvoted: true,
+      starred: false
+    }
+  });
+
+  obj2.downvote();
+  assert.deepEqual(receivedPayload, {
+    id: obj2_id,
+    action: 'downvote',
+    newState: {
+      count: obj2_origCount - 1,
+      downvoted: true,
+      upvoted: false,
+      starred: false
+    }
+  });
+
+  obj2.downvote();
+  assert.deepEqual(receivedPayload, {
+    id: obj2_id,
+    action: 'undownvote',
+    newState: {
+      count: obj2_origCount,
+      downvoted: false,
+      upvoted: false,
+      starred: false
+    }
+  });
 });
 
 QUnit.test('update model updates UI', assert => {

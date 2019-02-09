@@ -264,7 +264,6 @@ const Upvote = function() {
     };
     const combinedParams = Utils.combine(defaults, domParams, params);
     const model = Model.create(combinedParams);
-    const callback = combinedParams.callback;
 
     const throwIfDestroyed = () => {
       if (destroyed) {
@@ -272,25 +271,39 @@ const Upvote = function() {
       }
     };
 
+    const callback = action => {
+      const data = model.data();
+      combinedParams.callback({
+        id: data.id,
+        action: action,
+        newState: {
+          count: data.count,
+          upvoted: data.upvoted,
+          downvoted: data.downvoted,
+          starred: data.starred
+        }
+      });
+    };
+
     const upvote = () => {
       throwIfDestroyed();
       model.upvote();
       view.render(model);
-      callback(model.data());
+      callback(model.upvoted() ? 'upvote' : 'unupvote');
     };
 
     const downvote = () => {
       throwIfDestroyed();
       model.downvote();
       view.render(model);
-      callback(model.data());
+      callback(model.downvoted() ? 'downvote' : 'undownvote');
     };
 
     const star = () => {
       throwIfDestroyed();
       model.star();
       view.render(model);
-      callback(model.data());
+      callback(model.starred() ? 'star' : 'unstar');
     };
 
     const destroy = () => {
