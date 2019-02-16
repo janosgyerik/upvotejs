@@ -33,5 +33,11 @@
       "name": "dilip-vishwa",
       "url": "https://github.com/dilip-vishwa"
     }
-  ]
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "jquery": "^3.1.1",
+    "qunit": "^2.8.0"
+  },
+  "license": "CC-BY-3.0"
 }

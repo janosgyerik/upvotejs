@@ -1,3 +1,25 @@
+Develop
+=======
+
+Practical tips and notes for working on this package.
+
+Setup
+-----
+
+Install dependencies:
+
+    npm install
+
+Verify that all automated tests are passing:
+
+    TODO
+
+Open the unit tests:
+
+    open tests/vanilla.html
+    open tests/jquery.html
+
+
 Importing from another new Stack Exchange site
 ----------------------------------------------
 
