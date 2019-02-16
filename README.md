@@ -222,8 +222,7 @@ We accept donations via [PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xc
 License
 -------
 
-Licensed under Creative Commons Attribution 3.0 Unported
-http://creativecommons.org/licenses/by/3.0/
+<a rel="license" href="http://creativecommons.org/licenses/by/3.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/3.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/">Creative Commons Attribution 3.0 Unported License</a>.
 
 [stackoverflow]: http://stackoverflow.com/
 [superuser]: http://superuser.com/
