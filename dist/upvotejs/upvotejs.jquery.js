@@ -45,7 +45,7 @@
         total++;
         const obj = Upvote.create(id, options);
         jqdom.data(namespace, obj);
-      } catch {
+      } catch (e) {
         failed++;
       }
     });
