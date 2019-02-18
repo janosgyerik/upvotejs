@@ -1,5 +1,6 @@
 UpvoteJS
 ========
+test
 
 `UpvoteJS` is a JavaScript package to create a voting widget that looks like
 the one used on [Stack][stackoverflow] [Exchange][superuser] [sites][serverfault].
