@@ -1,0 +1,28 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Mocha Tests</title>
+  <link href="../node_modules/mocha/mocha.css" rel="stylesheet" />
+</head>
+<body>
+  <div id="mocha"></div>
+
+  <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="../node_modules/mocha/mocha.js"></script>
+  <script src="../node_modules/chai/chai.js"></script>
+
+  <script src="../dist/upvotejs/upvotejs.vanilla.js"></script>
+  <script src="../dist/upvotejs/upvotejs.jquery.js"></script>
+
+  <script>mocha.setup('bdd')</script>
+  <script src="lib/utils.js"></script>
+  <script src="lib/common-tests.js"></script>
+  <script src="lib/setup.js"></script>
+  <script src="test.jquery.js"></script>
+  <script>
+    mocha.checkLeaks();
+    mocha.globals(['jQuery']);
+    mocha.run();
+  </script>
+</body>
+</html>
