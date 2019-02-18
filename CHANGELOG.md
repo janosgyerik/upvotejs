@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Migrate qunit tests to mocha
+
 ## [2.1.0] - 2019-02-09
 
 ### Added

@@ -36,8 +36,13 @@
   ],
   "dependencies": {},
   "devDependencies": {
+    "chai": "^4.2.0",
     "jquery": "^3.1.1",
-    "qunit": "^2.8.0"
+    "jsdom": "^13.2.0",
+    "mocha": "^5.2.0"
+  },
+  "scripts": {
+    "test": "mocha"
   },
   "license": "CC-BY-3.0"
 }

@@ -12,12 +12,12 @@ Install dependencies:
 
 Verify that all automated tests are passing:
 
-    TODO
+    npm test
 
-Open the unit tests:
+Optionally, open the unit tests in a browser:
 
-    open tests/vanilla.html
-    open tests/jquery.html
+    open test/vanilla.html
+    open test/jquery.html
 
 
 Importing from another new Stack Exchange site

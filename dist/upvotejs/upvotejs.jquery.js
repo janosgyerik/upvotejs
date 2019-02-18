@@ -34,23 +34,18 @@
   const enabledClass = 'upvotejs-enabled';
 
   function init(dom, options) {
-    var total = 0;
-    var failed = 0;
-    var ret = dom.each(function() {
-      const jqdom = $(this);
-      methods.destroy(jqdom);
-
-      const id = jqdom.attr('id');
-      try {
-        total++;
+    const created = [];
+    try {
+      var ret = dom.each(function() {
+        const jqdom = $(this);
+        const id = jqdom.attr('id');
         const obj = Upvote.create(id, options);
         jqdom.data(namespace, obj);
-      } catch (e) {
-        failed++;
-      }
-    });
-    if (failed > 0) {
-      throw 'error: failed to create ' + failed + '/' + total + ' controllers';
+        created.push(jqdom);
+      });
+    } catch (e) {
+      created.forEach(obj => methods.destroy(obj));
+      throw e;
     }
     return ret;
   }

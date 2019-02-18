@@ -28,9 +28,11 @@
  *
  */
 
-const Upvote = function() {
-  const upvoteClass = 'upvote';
+const UpvoteJS = function(document) {
+  "use strict";
+
   const enabledClass = 'upvotejs-enabled';
+  const upvoteClass = 'upvote';
   const upvoteOnClass = 'upvote-on';
   const downvoteClass = 'downvote';
   const downvoteOnClass = 'downvote-on';
@@ -135,7 +137,7 @@ const Upvote = function() {
     const create = id => {
       const dom = document.getElementById(id);
       if (dom === null) {
-        throw 'error: could not find element with ID ' + id + ' in the DOM';
+        throw 'error: element with ID "' + id + '" must exist in the DOM';
       }
 
       if (Utils.classes(dom).includes(enabledClass)) {
@@ -146,7 +148,7 @@ const Upvote = function() {
       const firstElementByClass = className => {
         const list = dom.getElementsByClassName(className);
         if (list === null) {
-          throw 'error: could not find element with class ' + className + ' within element with ID ' + id + ' in the DOM';
+          throw 'error: element with class "' + className + '" must exist within element with ID "' + id + '" in the DOM';
         }
         return list[0];
       };
@@ -274,7 +276,7 @@ const Upvote = function() {
     const callback = action => {
       const data = model.data();
       combinedParams.callback({
-        id: data.id,
+        id: id,
         action: action,
         newState: {
           count: data.count,
@@ -345,4 +347,31 @@ const Upvote = function() {
   return {
     create: create
   };
-}();
+};
+
+(function(global, factory) {
+  "use strict";
+
+  if (typeof module === "object" && typeof module.exports === "object") {
+    const create = () => {
+      if (global.document) {
+        return factory(global, true);
+      }
+      return w => {
+        if (!w.document) {
+          throw new Error("UpvoteJS requires a window with a document");
+        }
+        return factory(w);
+      };
+    };
+    module.exports = create();
+  } else {
+    factory(global);
+  }
+})(typeof window !== "undefined" ? window : this, function(window, noGlobal) {
+  const Upvote = UpvoteJS(window.document);
+  if (!noGlobal) {
+    window.Upvote = Upvote;
+  }
+  return Upvote;
+});
