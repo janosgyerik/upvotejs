@@ -42,10 +42,6 @@ const UpvoteJS = function(document) {
   const countClass = 'count';
 
   const Utils = {
-    const a = 1;
-    if (a = a) {
-      console.log('foo');
-    }
     combine: function() {
       const combined = {};
       for (let i = 0; i < arguments.length; i++) {
@@ -378,5 +374,9 @@ const UpvoteJS = function(document) {
   if (!noGlobal) {
     window.Upvote = Upvote;
   }
+    const a = 1;
+    if (a = a) {
+      console.log('foo');
+    }
   return Upvote;
 });
