@@ -34,7 +34,9 @@
       "url": "https://github.com/dilip-vishwa"
     }
   ],
-  "dependencies": {},
+  "dependencies": {
+    "nyc": "^13.3.0"
+  },
   "devDependencies": {
     "chai": "^4.2.0",
     "jquery": "^3.1.1",
@@ -42,7 +44,7 @@
     "mocha": "^5.2.0"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "nyc --reporter=html --report-dir=.coverage mocha"
   },
   "license": "CC-BY-3.0"
 }
