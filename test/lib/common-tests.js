@@ -6,6 +6,19 @@ const Tests = {
     const Upvote = Setup.Upvote;
     const $ = Setup.jQuery;
 
+    const demo = params => {
+      $('#demo').append(Utils.newDom(params));
+      Upvote.create(params.id);
+    };
+    if (Setup.demo) {
+      demo({id: 'demo1', count: 0});
+      demo({id: 'demo2', count: 1, upvoted: true});
+      demo({id: 'demo3', count: -1, downvoted: true});
+      demo({id: 'unix', count: 3, upvoted: true, starred: true, skin: 'unix'});
+      demo({id: 'serverfault', count: 3, upvoted: true, starred: true, skin: 'serverfault'});
+      demo({id: 'superuser', count: 3, upvoted: true, starred: true, skin: 'superuser'});
+    }
+
     describe('initialize from params', () => {
       describe('for empty params', () => {
         const obj = gen();
@@ -45,43 +58,43 @@ const Tests = {
 
     describe('initialize from dom', () => {
       it('should pick up values from the DOM', () => {
-        const v1 = Upvote.create(Utils.newDom({count: 1}).attr('id'));
+        const v1 = Upvote.create(Utils.addNewDom({count: 1}).attr('id'));
         assert.equal(v1.count(), 1);
         assert.equal(v1.upvoted(), false);
         assert.equal(v1.downvoted(), false);
         assert.equal(v1.starred(), false);
 
-        const v2 = Upvote.create(Utils.newDom({count: 2, upvoted: true}).attr('id'));
+        const v2 = Upvote.create(Utils.addNewDom({count: 2, upvoted: true}).attr('id'));
         assert.equal(v2.count(), 2);
         assert.equal(v2.upvoted(), true);
         assert.equal(v2.downvoted(), false);
         assert.equal(v2.starred(), false);
 
-        const v3 = Upvote.create(Utils.newDom({count: 3, upvoted: true, starred: true}).attr('id'));
+        const v3 = Upvote.create(Utils.addNewDom({count: 3, upvoted: true, starred: true}).attr('id'));
         assert.equal(v3.count(), 3);
         assert.equal(v3.upvoted(), true);
         assert.equal(v3.downvoted(), false);
         assert.equal(v3.starred(), true);
 
-        const v4 = Upvote.create(Utils.newDom({count: 4, downvoted: true}).attr('id'));
+        const v4 = Upvote.create(Utils.addNewDom({count: 4, downvoted: true}).attr('id'));
         assert.equal(v4.count(), 4);
         assert.equal(v4.upvoted(), false);
         assert.equal(v4.downvoted(), true);
         assert.equal(v4.starred(), false);
 
-        const v5 = Upvote.create(Utils.newDom({count: 5, downvoted: true, starred: true}).attr('id'));
+        const v5 = Upvote.create(Utils.addNewDom({count: 5, downvoted: true, starred: true}).attr('id'));
         assert.equal(v5.count(), 5);
         assert.equal(v5.upvoted(), false);
         assert.equal(v5.downvoted(), true);
         assert.equal(v5.starred(), true);
 
-        const vLarge = Upvote.create(Utils.newDom({count: 456789}).attr('id'));
+        const vLarge = Upvote.create(Utils.addNewDom({count: 456789}).attr('id'));
         assert.equal(vLarge.count(), 456789);
         assert.equal(vLarge.upvoted(), false);
         assert.equal(vLarge.downvoted(), false);
         assert.equal(vLarge.starred(), false);
 
-        const vNegativeLarge = Upvote.create(Utils.newDom({count: -456789}).attr('id'));
+        const vNegativeLarge = Upvote.create(Utils.addNewDom({count: -456789}).attr('id'));
         assert.equal(vNegativeLarge.count(), -456789);
         assert.equal(vNegativeLarge.upvoted(), false);
         assert.equal(vNegativeLarge.downvoted(), false);
@@ -89,7 +102,7 @@ const Tests = {
       });
 
       it('should throw when DOM defines upvoted + downvoted', () => {
-        assert.throws(() => Upvote.create(Utils.newDom({upvoted: true, downvoted: true})));
+        assert.throws(() => Upvote.create(Utils.addNewDom({upvoted: true, downvoted: true})));
       });
     });
 
@@ -420,7 +433,7 @@ const Tests = {
     describe('all sub-elements (upvote/downvote/count/star) are optional in the HTML markup', () => {
       ['upvote', 'downvote', 'count', 'star'].forEach(cls => {
         it(`can be initialized without ${cls} sub-element`, () => {
-          const jqdom = Utils.newDom();
+          const jqdom = Utils.addNewDom();
           jqdom.find('.' + cls).remove();
           const obj = Setup.create(jqdom.attr('id'), {}, jqdom);
 

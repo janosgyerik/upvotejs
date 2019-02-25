@@ -35,14 +35,22 @@ const Utils = (window, $) => {
     if (params.starred) {
       jqdom.find('.star').addClass('star-on');
     }
+    if (params.skin) {
+      jqdom.addClass('upvotejs-' + params.skin);
+    }
 
+    return jqdom;
+  };
+
+  const addNewDom = params => {
+    const jqdom = newDom(params);
     $('#sandbox').append(jqdom);
     return jqdom;
   };
 
   const gen = create => function() {
     return (params = {}) => {
-      const jqdom = params.id ? $('#' + params.id) : newDom(params);
+      const jqdom = params.id ? $('#' + params.id) : addNewDom(params);
       const id = params.id || jqdom.attr('id');
 
       params.callback = params.callback || (data => {});
@@ -80,6 +88,7 @@ const Utils = (window, $) => {
   return {
     newId: newId,
     newDom: newDom,
+    addNewDom: addNewDom,
     gen: gen,
     uiTester: uiTester,
     data: data

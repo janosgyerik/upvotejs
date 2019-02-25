@@ -14,6 +14,7 @@ const CliSetup = () => {
 
 const BrowserSetup = () => {
   return {
+    demo: true,
     chai: chai,
     jQuery: jQuery,
     Utils: Utils(window, $),

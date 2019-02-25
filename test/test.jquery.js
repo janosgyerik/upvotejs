@@ -32,7 +32,7 @@ const assert = Setup.chai.assert;
 describe('multiple objects from DOM selector', () => {
   it('should create and destroy widgets for DOM selector', () => {
     for (let i = 0; i < 5; i++) {
-      const jqdom = Setup.Utils.newDom();
+      const jqdom = Setup.Utils.addNewDom();
       jqdom.addClass('custom');
     }
 
@@ -56,7 +56,7 @@ describe('multiple objects from DOM selector', () => {
 
   it('should abort creating widgets if any fail in DOM selector', () => {
     for (let i = 0; i < 5; i++) {
-      const jqdom = Setup.Utils.newDom();
+      const jqdom = Setup.Utils.addNewDom();
       jqdom.addClass('custom2');
     }
 
