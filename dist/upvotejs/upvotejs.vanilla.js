@@ -146,11 +146,7 @@ const UpvoteJS = function(document) {
       dom.className += ' ' + enabledClass;
 
       const firstElementByClass = className => {
-        const list = dom.getElementsByClassName(className);
-        if (list === null) {
-          throw 'error: element with class "' + className + '" must exist within element with ID "' + id + '" in the DOM';
-        }
-        return list[0];
+        return dom.getElementsByClassName(className)[0];
       };
 
       const createCounter = className => {
