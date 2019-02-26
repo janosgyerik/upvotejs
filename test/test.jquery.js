@@ -67,3 +67,14 @@ describe('multiple objects from DOM selector', () => {
     assert.equal($('.custom2.upvotejs-enabled').length, 0);
   });
 });
+
+describe('calling non-existent method', () => {
+  it('should raise an error', () => {
+    const obj = gen({count: 3});
+    const jq = $('#' + obj.id);
+    assert.equal(jq.upvote('count'), 3);
+    jq.upvote('upvote');
+    assert.equal(jq.upvote('count'), 4);
+    assert.throws(() => jq.upvote('foo'));
+  });
+});
