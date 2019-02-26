@@ -7,9 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.2.0] - 2019-02-26
+
 ### Changed
 
-- Migrate qunit tests to mocha
+- Replace qunit tests with mocha
+
+### Added
+
+- Add test coverage reporting
+- Integrate with Travis CI
+- Integrate with sonarcloud.io (autoscan mode)
 
 ## [2.1.0] - 2019-02-09
 
