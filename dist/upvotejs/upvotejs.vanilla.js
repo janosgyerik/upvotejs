@@ -1,4 +1,5 @@
 // TODO
+// TODO
 /*
  * UpvoteJS - a Stack Exchange look-alike voting widget
  * ----------------------------------------------------
