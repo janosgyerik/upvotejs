@@ -29,6 +29,10 @@
  *  Upvote.create('id', {count: 5, upvoted: true});
  *
  */
+    const a = 1;
+    if (a = a) {
+      console.log('foo');
+    }
 
 const UpvoteJS = function(document) {
   "use strict";
