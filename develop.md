@@ -16,8 +16,8 @@ Verify that all automated tests are passing:
 
 Optionally, open the unit tests in a browser:
 
-    open test/vanilla.html
-    open test/jquery.html
+    open tests/vanilla.html
+    open tests/jquery.html
 
 
 Importing from another new Stack Exchange site
