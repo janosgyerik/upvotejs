@@ -1,5 +1,6 @@
 UpvoteJS
 ========
+test
 
 [![Build Status](https://travis-ci.org/janosgyerik/upvotejs.svg?branch=master)](https://travis-ci.org/janosgyerik/upvotejs)
 
