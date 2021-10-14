@@ -1,6 +1,8 @@
 UpvoteJS
 ========
 
+dummy change
+
 [![Build Status](https://travis-ci.org/janosgyerik/upvotejs.svg?branch=master)](https://travis-ci.org/janosgyerik/upvotejs)
 
 `UpvoteJS` is a JavaScript package to create a voting widget that looks like
