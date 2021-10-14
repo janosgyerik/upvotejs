@@ -28,6 +28,8 @@
  *
  */
 
+a = 3;
+// TODO
 const UpvoteJS = function(document) {
   "use strict";
 
